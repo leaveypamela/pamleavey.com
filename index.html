@@ -25,25 +25,30 @@ body { background: var(--dark); color: var(--text); font-family: 'Jost', sans-se
 
 /* DISCLAIMER */
 #disclaimer {
-  background: rgba(201,168,76,0.08);
-  border-bottom: 1px solid rgba(201,168,76,0.2);
-  padding: 0.8rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  background: rgba(10,10,10,0.98);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  padding: 0.7rem 2rem;
   text-align: center;
   font-size: 0.8rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-muted);
 }
 #disclaimer a { color: var(--gold-light); text-decoration: none; }
 #disclaimer a:hover { text-decoration: underline; }
 
 /* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.98); border-bottom: 1px solid rgba(201,168,76,0.08); }
+nav { position: fixed; top: 52px; left: 0; right: 0; z-index: 100; padding: 1rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.98); border-bottom: 1px solid rgba(201,168,76,0.08); }
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: 0.15em; color: var(--gold-light); text-decoration: none; }
 .nav-cta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 0.6rem 1.4rem; border-radius: 2px; text-decoration: none; transition: all 0.3s; }
 .nav-cta:hover { background: var(--gold); color: var(--dark); }
 
 /* HERO */
-#hero { min-height: 100vh; display: flex; align-items: center; padding: 12rem 3rem 4rem; position: relative; overflow: hidden; background: var(--dark); }
+#hero { min-height: 100vh; display: flex; align-items: center; padding: 10rem 3rem 4rem; position: relative; overflow: hidden; background: var(--dark); }
 .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.05) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(232,160,160,0.04) 0%, transparent 45%); }
 .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
 .hero-text h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; color: var(--text); }
@@ -178,7 +183,7 @@ footer { background: var(--dark-2); border-top: 1px solid rgba(201,168,76,0.1); 
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   section { padding: 4rem 1.5rem; }
-  #hero { padding: 11rem 1.5rem 3rem; }
+  #hero { padding: 9rem 1.5rem 3rem; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-art { display: none; }
   .portal-inner { grid-template-columns: 1fr; }
@@ -196,8 +201,8 @@ footer { background: var(--dark-2); border-top: 1px solid rgba(201,168,76,0.1); 
 </div>
 
 <nav>
-  <a href="#" class="nav-logo">Pam Leavey</a>
-  <a href="https://tally.so/r/OD0b8A" class="nav-cta">Commission yours 🌸</a>
+  <a href="#" class="nav-logo">🌙 Pam Leavey</a>
+  <a href="https://tally.so/r/OD0b8A" class="nav-cta">Commission yours</a>
 </nav>
 
 <section id="hero">
@@ -386,7 +391,7 @@ footer { background: var(--dark-2); border-top: 1px solid rgba(201,168,76,0.1); 
         <p class="preco grad">£333</p>
         <p class="preco-brazil">For clients in Brazil: R$1.333</p>
         <p class="preco-sub">Instalment plans available · Ask via the form</p>
-        <a href="https://tally.so/r/OD0b8A" class="btn-whatsapp">Commission yours 🌸</a>
+        <a href="https://tally.so/r/OD0b8A" class="btn-whatsapp">Commission yours</a>
       </div>
 
       <div class="produto-card">
@@ -417,10 +422,11 @@ footer { background: var(--dark-2); border-top: 1px solid rgba(201,168,76,0.1); 
     <div class="sobre-text">
       <p style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">The Artist</p>
       <h2 class="section-title" style="margin-bottom:1.5rem;">I am Pam.</h2>
-      <p>Soul Artist, medium and intuitive painter based in London. I have spent 11 years working intimately with people, learning how much the soul carries in silence.</p>
-      <p>I am a Cancerian, Kin 243 Blue Solar Night of the Eagle Wavespell. I work with tarot, crystal energy, candles, smoke and water as ritual tools for opening the channel before I paint.</p>
-      <p>Each Soul Portrait is a co-creation between me, my guides and yours. I do not paint what I see. I paint what I feel arriving through the space between us.</p>
-      <em class="grad">I paint what your soul already knows.</em>
+      <p>Soul Artist, medium and intuitive painter based in London. Born in Brazil, living between two worlds, I have always been drawn to what lies beneath the surface of things.</p>
+      <p>I spent 11 years as a tattoo artist, working intimately with people and learning how much the soul carries in silence. That work taught me to listen with my hands, to feel what someone could not yet put into words, and to trust what arrived through the creative act.</p>
+      <p>A background in architecture gave me an eye for form, structure and symbol. An encounter with Jungian depth psychology gave me the language for what I had always been sensing. And a lifelong spiritual practice, rooted in mediumship, tarot and Afro-Brazilian tradition, gave me the channel through which it all flows.</p>
+      <p>Today I paint souls. I am a Cancerian, Kin 243 Blue Solar Night of the Eagle Wavespell. I work with tarot, crystals, candles, white sage and water as ritual tools to open the channel before each piece begins. My guides, The Tower, The Devil and Judgement, hold the space: transformation, shadow and the call of the soul.</p>
+      <em class="grad">I do not paint what I see. I paint what arrives.</em>
       <div class="sobre-badges">
         <span class="badge">Medium</span>
         <span class="badge">Soul Artist</span>
@@ -555,7 +561,11 @@ footer { background: var(--dark-2); border-top: 1px solid rgba(201,168,76,0.1); 
   <p class="footer-email">hello@pamleavey.com</p>
   <p class="footer-pt-note">🌸 Comunidade brasileira: para encomendar sua arte, me manda mensagem no <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a> ou no <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank">WhatsApp</a>.</p>
   <hr class="footer-divider">
-  <p class="footer-copy">© 2026 Pam Leavey. All rights reserved.</p>
+  <p style="margin-bottom:1rem;">
+  <a href="/privacy.html" style="font-size:0.75rem;color:var(--text-muted);text-decoration:none;margin:0 1rem;" onmouseover="this.style.color='#E8C97A'" onmouseout="this.style.color='#9A9080'">Privacy Policy</a>
+  <a href="/terms.html" style="font-size:0.75rem;color:var(--text-muted);text-decoration:none;margin:0 1rem;" onmouseover="this.style.color='#E8C97A'" onmouseout="this.style.color='#9A9080'">Terms of Service</a>
+</p>
+<p class="footer-copy">© 2026 Pam Leavey. All rights reserved.</p>
 </footer>
 
 <script>
