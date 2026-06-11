@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pam Leavey | Artista da Alma</title>
+<title>Pam Leavey | Soul Artist</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -23,20 +23,30 @@ html { scroll-behavior: smooth; }
 body { background: var(--dark); color: var(--text); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
 .grad { background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--rose)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
+/* DISCLAIMER */
+#disclaimer {
+  background: rgba(201,168,76,0.08);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0.8rem 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+#disclaimer a { color: var(--gold-light); text-decoration: none; }
+#disclaimer a:hover { text-decoration: underline; }
+
 /* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent); }
+nav { position: fixed; top: 2.5rem; left: 0; right: 0; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(to bottom, rgba(10,10,10,0.97) 80%, transparent); }
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: 0.15em; color: var(--gold-light); text-decoration: none; }
-.nav-right { display: flex; align-items: center; gap: 1.2rem; }
-.lang-btn { background: none; border: 1px solid rgba(201,168,76,0.3); color: var(--text-muted); font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; padding: 0.5rem 1rem; border-radius: 2px; cursor: pointer; transition: all 0.3s; }
-.lang-btn:hover { border-color: var(--gold); color: var(--gold); }
 .nav-cta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 0.6rem 1.4rem; border-radius: 2px; text-decoration: none; transition: all 0.3s; }
 .nav-cta:hover { background: var(--gold); color: var(--dark); }
 
 /* HERO */
-#hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 3rem 4rem; position: relative; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 60%), radial-gradient(ellipse at 30% 80%, rgba(232,160,160,0.05) 0%, transparent 50%); }
+#hero { min-height: 100vh; display: flex; align-items: center; padding: 12rem 3rem 4rem; position: relative; overflow: hidden; background: var(--dark); }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.05) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(232,160,160,0.04) 0%, transparent 45%); }
 .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
-.hero-text h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; }
+.hero-text h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; color: var(--text); }
 .hero-text h1 em { font-style: italic; display: block; }
 .hero-sub { font-size: 1rem; line-height: 1.8; color: var(--text-muted); max-width: 420px; margin-bottom: 2.5rem; }
 .btn-primary { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--dark); padding: 1rem 2.2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; }
@@ -59,11 +69,11 @@ section { padding: 6rem 3rem; }
 .container { max-width: 1100px; margin: 0 auto; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
 
-/* DOR */
-#dor { background: var(--dark-2); }
-.dor-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-.dor-text p { font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.2rem; }
-.dor-text p strong { color: var(--text); font-weight: 400; }
+/* PORTAL */
+#portal { background: var(--dark-2); }
+.portal-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.portal-text p { font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.2rem; }
+.portal-text p strong { color: var(--text); font-weight: 400; }
 
 /* IMPACTO */
 #impacto { text-align: center; background: var(--dark); }
@@ -71,66 +81,74 @@ section { padding: 6rem 3rem; }
 #impacto p { font-size: 1rem; line-height: 1.8; color: var(--text-muted); max-width: 600px; margin: 0 auto 3rem; }
 .eye-container { margin: 3rem auto 0; width: 120px; opacity: 0.7; }
 
-/* COMO FUNCIONA */
-#como-funciona { background: var(--dark-2); text-align: center; }
-#como-funciona .section-title { margin-bottom: 2rem; }
-#como-funciona .body-text { font-size: 1rem; line-height: 1.9; color: var(--text-muted); max-width: 650px; margin: 0 auto 1.5rem; }
+/* PROCESSO */
+#processo { background: var(--dark-2); text-align: center; }
+#processo .section-title { margin-bottom: 2rem; }
+#processo .body-text { font-size: 1rem; line-height: 1.9; color: var(--text-muted); max-width: 650px; margin: 0 auto 1.5rem; }
 .destaque { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; font-weight: 300; margin-top: 2rem; }
 
-/* BENEFÍCIOS */
-#beneficios { background: var(--dark); }
-#beneficios .section-title { text-align: center; margin-bottom: 3rem; }
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.benefit-card { background: var(--dark-3); border: 1px solid rgba(201,168,76,0.1); border-radius: 4px; padding: 2.5rem; transition: border-color 0.3s; }
-.benefit-card:hover { border-color: rgba(201,168,76,0.3); }
-.benefit-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.8rem; }
-.benefit-card p { font-size: 0.95rem; line-height: 1.7; color: var(--text-muted); }
+/* ELEMENTOS */
+.elementos-grid { display: flex; justify-content: center; gap: 2rem; margin: 3rem auto; flex-wrap: wrap; max-width: 600px; }
+.elemento { text-align: center; }
+.elemento-symbol { font-size: 1.8rem; margin-bottom: 0.4rem; }
+.elemento-name { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
 
-/* URGÊNCIA */
-#urgencia { padding: 2rem 3rem; background: #3D0F0F; text-align: center; border-top: 1px solid rgba(255,100,100,0.2); border-bottom: 1px solid rgba(255,100,100,0.2); }
-#urgencia p { font-size: 0.9rem; letter-spacing: 0.05em; line-height: 1.7; max-width: 700px; margin: 0 auto; }
-
-/* PRODUTO */
-#produto { background: var(--dark-2); }
-.produto-intro { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
-.produto-intro p { font-size: 1rem; line-height: 1.8; color: var(--text-muted); }
-.produto-card { max-width: 600px; margin: 0 auto; background: var(--dark-3); border: 1px solid rgba(201,168,76,0.3); border-radius: 4px; padding: 3rem; text-align: center; }
-.produto-card h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; margin-bottom: 0.5rem; }
-.produto-card .sub { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2.5rem; }
-.lista-produto { list-style: none; text-align: left; margin-bottom: 2.5rem; }
-.lista-produto li { padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; display: flex; align-items: center; gap: 0.8rem; color: var(--text-muted); }
+/* PRODUTOS */
+#produtos { background: var(--dark); }
+#produtos .section-title { text-align: center; margin-bottom: 0.8rem; }
+#produtos .section-sub { text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.produtos-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
+.produto-card { background: var(--dark-3); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; padding: 2.5rem; }
+.produto-card.destaque-card { border-color: rgba(201,168,76,0.45); }
+.produto-tag { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+.produto-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; margin-bottom: 0.5rem; }
+.produto-card .produto-desc { font-size: 0.9rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 1.8rem; }
+.lista-produto { list-style: none; margin-bottom: 2rem; }
+.lista-produto li { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; display: flex; align-items: center; gap: 0.8rem; color: var(--text-muted); }
 .lista-produto li:last-child { border-bottom: none; }
 .lista-produto li::before { content: '✦'; color: var(--gold); font-size: 0.6rem; flex-shrink: 0; }
-.preco { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; margin-bottom: 0.3rem; }
-.preco-sub { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 2rem; }
-.btn-whatsapp { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--dark); padding: 1.1rem 3rem; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; width: 100%; }
+.preco { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; margin-bottom: 0.2rem; }
+.preco-brazil { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+.preco-sub { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+.btn-whatsapp { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--dark); padding: 1rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; width: 100%; text-align: center; }
 .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
+.btn-outline { display: inline-block; background: transparent; color: var(--gold); padding: 1rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; border: 1px solid rgba(201,168,76,0.5); transition: all 0.3s; width: 100%; text-align: center; }
+.btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+.originais-note { text-align: center; margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
+.originais-note a { color: var(--gold-light); text-decoration: none; }
+.originais-note a:hover { text-decoration: underline; }
+
+/* URGÊNCIA */
+#urgencia { padding: 2rem 3rem; background: #1a0f1f; text-align: center; border-top: 1px solid rgba(180,100,220,0.15); border-bottom: 1px solid rgba(180,100,220,0.15); }
+#urgencia p { font-size: 0.9rem; letter-spacing: 0.05em; line-height: 1.7; max-width: 700px; margin: 0 auto; }
 
 /* SOBRE */
-#sobre { background: var(--dark); }
+#sobre { background: var(--dark-2); }
 .sobre-inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center; }
 .foto-frame { width: 100%; aspect-ratio: 3/4; background: var(--dark-3); border-radius: 4px; border: 1px solid rgba(201,168,76,0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.1em; }
 .foto-frame img { width: 100%; height: 100%; object-fit: cover; }
 .sobre-text p { font-size: 1rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.2rem; }
 .sobre-text em { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; font-weight: 300; display: block; margin-top: 1.5rem; }
+.sobre-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.badge { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); padding: 0.4rem 0.9rem; border-radius: 2px; }
 
 /* FAQ */
-#faq { background: var(--dark-2); }
+#faq { background: var(--dark); }
 #faq .section-title { margin-bottom: 3rem; }
 .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
 .faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: 'Jost', sans-serif; font-size: 1rem; font-weight: 400; text-align: left; padding: 1.5rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.02em; transition: color 0.3s; }
 .faq-q:hover { color: var(--gold-light); }
-.faq-q span { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; }
-.faq-q.active span { transform: rotate(45deg); }
+.faq-q span.icon { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
+.faq-q.active span.icon { transform: rotate(45deg); }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
 .faq-a p { font-size: 0.95rem; line-height: 1.8; color: var(--text-muted); padding-bottom: 1.5rem; }
 
 /* DEPOIMENTOS */
-#depoimentos { background: var(--dark); }
+#depoimentos { background: var(--dark-2); }
 #depoimentos .section-title { text-align: center; margin-bottom: 0.5rem; }
 #depoimentos .sub-title { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 3.5rem; }
 .depo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.depo-card { background: var(--dark-3); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; padding: 2rem; transition: border-color 0.3s; }
+.depo-card { background: var(--dark-4); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; padding: 2rem; transition: border-color 0.3s; }
 .depo-card:hover { border-color: rgba(201,168,76,0.2); }
 .depo-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.2em; margin-bottom: 1.2rem; }
 .depo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; font-weight: 300; line-height: 1.7; color: var(--rose-light); margin-bottom: 1.5rem; }
@@ -139,44 +157,47 @@ section { padding: 6rem 3rem; }
 .depo-handle a:hover { color: var(--gold-light); }
 
 /* CTA FINAL */
-#cta-final { background: var(--dark-2); text-align: center; padding: 8rem 3rem; }
+#cta-final { background: var(--dark); text-align: center; padding: 8rem 3rem; }
 #cta-final .section-title { margin-bottom: 1rem; }
 #cta-final .sub { font-size: 1rem; line-height: 1.8; color: var(--text-muted); max-width: 550px; margin: 0 auto 1rem; }
 #cta-final .sub2 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--text-muted); max-width: 550px; margin: 0 auto 3rem; }
 
 /* FOOTER */
-footer { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.1); padding: 4rem 3rem; text-align: center; }
+footer { background: var(--dark-2); border-top: 1px solid rgba(201,168,76,0.1); padding: 4rem 3rem; text-align: center; }
 .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; margin-bottom: 0.3rem; }
 .footer-sub { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 2rem; }
 .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
 .footer-social a { width: 42px; height: 42px; border: 1px solid rgba(201,168,76,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); text-decoration: none; font-size: 0.85rem; transition: all 0.3s; }
 .footer-social a:hover { background: var(--gold); color: var(--dark); }
-.footer-email { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; }
+.footer-email { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.footer-pt-note { font-size: 0.8rem; font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6; }
+.footer-pt-note a { color: var(--gold-light); text-decoration: none; }
 .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin-bottom: 1.5rem; }
 .footer-copy { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em; }
 
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   section { padding: 4rem 1.5rem; }
-  #hero { padding: 7rem 1.5rem 3rem; }
+  #hero { padding: 11rem 1.5rem 3rem; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-art { display: none; }
-  .dor-inner { grid-template-columns: 1fr; }
+  .portal-inner { grid-template-columns: 1fr; }
   .sobre-inner { grid-template-columns: 1fr; }
-  .grid-2 { grid-template-columns: 1fr; }
+  .produtos-grid { grid-template-columns: 1fr; }
   .depo-grid { grid-template-columns: 1fr; }
-  .nav-right { gap: 0.8rem; }
+  #disclaimer { font-size: 0.75rem; padding: 0.8rem 1rem; }
 }
 </style>
 </head>
 <body>
 
+<div id="disclaimer">
+  🌸 Para a minha comunidade brasileira: este site está em inglês, mas o atendimento continua igual. Para encomendar sua arte, é só me enviar uma mensagem no <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a> ou no <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank">WhatsApp</a>.
+</div>
+
 <nav>
   <a href="#" class="nav-logo">Pam Leavey</a>
-  <div class="nav-right">
-    <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
-    <a href="https://wa.me/message/BRW2PS55L4DXJ1" class="nav-cta" data-pt="Quero o meu 🌸" data-en="I want mine 🌸">Quero o meu 🌸</a>
-  </div>
+  <a href="https://tally.so/r/OD0b8A" class="nav-cta">Commission yours 🌸</a>
 </nav>
 
 <section id="hero">
@@ -184,46 +205,78 @@ footer { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.1); pa
   <div class="hero-inner container">
     <div class="hero-text">
       <h1>
-        <span data-pt="A sua alma tem uma forma." data-en="Your soul has a shape.">A sua alma tem uma forma.</span>
-        <em class="grad" data-pt="E ela é única." data-en="And it is unique.">E ela é única.</em>
+        <span>No two frequencies are the same.</span>
+        <em class="grad">No two paintings ever are.</em>
       </h1>
-      <p class="hero-sub" data-pt="Aquarela canalizada à mão, criada só com o seu nome e data de nascimento. Uma obra única que revela quem você realmente é." data-en="Hand-channelled watercolour, created only with your name and date of birth. A unique artwork that reveals who you truly are.">Aquarela canalizada à mão, criada só com o seu nome e data de nascimento. Uma obra única que revela quem você realmente é.</p>
-      <a href="https://wa.me/message/BRW2PS55L4DXJ1" class="btn-primary" data-pt="Oi Pam, quero saber mais 🌸" data-en="Hi Pam, I want to know more 🌸">Oi Pam, quero saber mais 🌸</a>
+      <p class="hero-sub">A sacred portal of soul awakening and energetic alignment, hand-channelled through ritual, the five elements and the wisdom of your spiritual guides.</p>
+      <a href="https://tally.so/r/OD0b8A" class="btn-primary">Begin your journey 🌸</a>
     </div>
     <div class="hero-art">
-      <div class="art-card"><div class="art-card-placeholder">Soul Portrait</div></div>
-      <div class="art-card"><div class="art-card-placeholder">Soul Portrait</div></div>
-      <div class="art-card"><div class="art-card-placeholder">Soul Portrait</div></div>
+      <div class="art-card"><img src="1.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<div class=art-card-placeholder>Soul Portrait</div>'"></div>
+      <div class="art-card"><img src="2.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<div class=art-card-placeholder>Soul Portrait</div>'"></div>
+      <div class="art-card"><img src="3.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<div class=art-card-placeholder>Soul Portrait</div>'"></div>
     </div>
   </div>
 </section>
 
 <div id="carrossel">
   <div class="carrossel-track">
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
-    <div class="carrossel-item"><div class="art-card-placeholder">Soul Portrait</div></div>
+    <div class="carrossel-item"><img src="4.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="5.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="6.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="7.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="8.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="9.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="10.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="11.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="12.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="13.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="14.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="16.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="17.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="18.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="19.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="4.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="5.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="6.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="7.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="8.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="9.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="10.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="11.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="12.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="13.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="14.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="16.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="17.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="18.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+    <div class="carrossel-item"><img src="19.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
   </div>
 </div>
 
-<section id="dor">
-  <div class="container dor-inner">
-    <div class="dor-text">
-      <h2 class="section-title grad" data-pt="Você já sentiu isso?" data-en="Have you ever felt this?">Você já sentiu isso?</h2>
-      <p data-pt="Aquela sensação de que há algo em você maior do que os papéis que você representa. Você lê Jung, você busca, você sente os arquétipos se movendo dentro de você." data-en="That feeling that there is something in you greater than the roles you play. You read Jung, you seek, you feel the archetypes moving within you.">Aquela sensação de que há algo em você maior do que os papéis que você representa. Você lê Jung, você busca, você sente os arquétipos se movendo dentro de você.</p>
-      <p data-pt="Mas ainda falta aquele momento em que tudo se encaixa. Em que você olha pra algo e pensa: <strong>isso sou eu. De verdade.</strong>" data-en="But there is still that moment missing where everything falls into place. Where you look at something and think: <strong>this is me. For real.</strong>">Mas ainda falta aquele momento em que tudo se encaixa. Em que você olha pra algo e pensa: <strong>isso sou eu. De verdade.</strong></p>
+<section id="manifesto" style="padding:5rem 3rem;background:var(--dark);text-align:center;">
+  <div class="container" style="max-width:750px;">
+    <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;">A living portal</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;line-height:1.4;margin-bottom:2rem;">
+      <span class="grad">Art as a portal.</span><br>
+      <span style="color:var(--text);">Awakening as the destination.</span><br>
+      <span style="color:var(--text-muted);font-style:italic;">Alignment as the gift.</span>
+    </h2>
+    <p style="font-size:1rem;line-height:1.9;color:var(--text-muted);margin-bottom:1.5rem;">Each Soul Portrait is not simply a painting. It is an opening, a moment where the unseen becomes visible and the soul finds its way back to itself. People describe receiving their piece as a homecoming, something they did not know they were searching for until it arrived.</p>
+    <p style="font-size:1rem;line-height:1.9;color:var(--text-muted);">This is soul awakening made tangible. Energetic alignment given form. A transmission that continues to unfold long after the painting reaches your hands.</p>
+  </div>
+</section>
+
+<section id="portal">
+  <div class="container portal-inner">
+    <div class="portal-text">
+      <h2 class="section-title grad">Have you ever felt this?</h2>
+      <p>That quiet pull. Something in you that knows there is more, a layer beneath the surface that has never been fully seen, never been given form.</p>
+      <p>You feel it in certain songs, certain places, certain moments of stillness. <strong>Your soul is already speaking. It is waiting for someone to listen.</strong></p>
     </div>
-    <div class="dor-visual">
-      <svg style="width:100%;max-width:320px;display:block;margin:0 auto;" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div style="position:relative;">
+      <img src="15.jpg" alt="Soul Portrait" style="width:100%;max-width:380px;display:block;margin:0 auto;border-radius:4px;border:1px solid rgba(201,168,76,0.2);box-shadow:0 20px 60px rgba(0,0,0,0.6);" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg style="display:none;width:100%;max-width:320px;margin:0 auto;" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="150" cy="100" rx="140" ry="80" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
         <ellipse cx="150" cy="100" rx="100" ry="55" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
         <circle cx="150" cy="100" r="35" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
@@ -239,10 +292,10 @@ footer { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.1); pa
 <section id="impacto">
   <div class="container">
     <h2 class="section-title">
-      <span class="grad" data-pt="A sua alma já sabe quem você é." data-en="Your soul already knows who you are.">A sua alma já sabe quem você é.</span><br>
-      <span data-pt="Ela só está esperando para ser vista." data-en="It is just waiting to be seen.">Ela só está esperando para ser vista.</span>
+      <span class="grad">Your soul already knows who you are.</span><br>
+      <span>It is just waiting to be seen.</span>
     </h2>
-    <p data-pt="O inconsciente carrega símbolos, arquétipos e memórias que a mente consciente ainda não alcançou. A aquarela canalizada é o espelho que revela o que sempre esteve lá." data-en="The unconscious carries symbols, archetypes and memories that the conscious mind has not yet reached. The channelled watercolour is the mirror that reveals what has always been there.">O inconsciente carrega símbolos, arquétipos e memórias que a mente consciente ainda não alcançou. A aquarela canalizada é o espelho que revela o que sempre esteve lá.</p>
+    <p>Through spiritual channelling, tarot and the wisdom of guides, I translate the invisible layers of your being into colour, symbol and form. Each painting is a sacred transmission, arriving exactly as it needs to.</p>
     <div class="eye-container">
       <svg viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M5 35 Q50 5 95 35 Q50 65 5 35Z" stroke="rgba(201,168,76,0.4)" stroke-width="1" fill="none"/>
@@ -257,155 +310,223 @@ footer { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.1); pa
   </div>
 </section>
 
-<section id="como-funciona">
+<section id="processo">
   <div class="container">
-    <h2 class="section-title grad" data-pt="Como nasce a sua obra?" data-en="How is your artwork born?">Como nasce a sua obra?</h2>
-    <p class="body-text" data-pt="Eu me sento em silêncio com o seu nome e a sua data de nascimento. Sem foto, sem história prévia. Deixo as cores chegarem, os símbolos emergirem, os arquétipos se revelarem." data-en="I sit in silence with your name and date of birth. No photo, no prior history. I let the colours come, the symbols emerge, the archetypes reveal themselves.">Eu me sento em silêncio com o seu nome e a sua data de nascimento. Sem foto, sem história prévia. Deixo as cores chegarem, os símbolos emergirem, os arquétipos se revelarem.</p>
-    <p class="body-text" data-pt="Cada pincelada é intuitiva, cada símbolo tem um significado. Depois de semanas pintando à mão em aquarela em Londres, a obra chega até você com uma leitura junguiana completa de tudo que emergiu." data-en="Every brushstroke is intuitive, every symbol carries meaning. After weeks of hand-painting in watercolour in London, the artwork reaches you with a complete Jungian reading of everything that emerged.">Cada pincelada é intuitiva, cada símbolo tem um significado. Depois de semanas pintando à mão em aquarela em Londres, a obra chega até você com uma leitura junguiana completa de tudo que emergiu.</p>
-    <p class="destaque grad" data-pt="Não é arte decorativa. É autoconhecimento em aquarela." data-en="Not decorative art. It is self-knowledge in watercolour.">Não é arte decorativa. É autoconhecimento em aquarela.</p>
-    <br><br>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--text-muted);text-align:center;" data-pt='"Às vezes a gente busca fora. Mas a chave somos nós."' data-en='"Sometimes we search outside. But the key is within us."'>"Às vezes a gente busca fora. Mas a chave somos nós."</p>
-  </div>
-</section>
+    <h2 class="section-title grad">How is your artwork born?</h2>
+    <p class="body-text">I begin by opening the channel. I sit in ritual with your name and date of birth, draw tarot to meet your spiritual guides, and invite the five elements to speak through the work.</p>
+    <p class="body-text">No photo. No history. Only presence, intention and trust. The colours arrive, the symbols emerge, and the painting takes form over weeks of quiet, intuitive work in London.</p>
+    <p class="body-text">When it is complete, your artwork arrives with a full written soul reading, channelled affirmations and a certificate of authenticity.</p>
 
-<section id="beneficios">
-  <div class="container">
-    <h2 class="section-title grad" data-pt="Com a sua obra, você:" data-en="With your artwork, you:">Com a sua obra, você:</h2>
-    <div class="grid-2">
-      <div class="benefit-card">
-        <h3 class="grad" data-pt="Encontra o espelho que faltava." data-en="Find the mirror you were missing.">Encontra o espelho que faltava.</h3>
-        <p data-pt="Cores e símbolos que refletem quem você é além das máscaras e dos papéis." data-en="Colours and symbols that reflect who you are beyond the masks and roles.">Cores e símbolos que refletem quem você é além das máscaras e dos papéis.</p>
+    <div style="margin:3rem auto;max-width:650px;background:var(--dark-3);border:1px solid rgba(201,168,76,0.15);border-radius:4px;padding:2.5rem;">
+      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;text-align:center;">The ritual</p>
+
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;text-align:center;margin-bottom:2rem;">
+        <div>
+          <div style="font-size:1.6rem;margin-bottom:0.5rem;">🜂</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Fire</div>
+          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">Candle</div>
+        </div>
+        <div>
+          <div style="font-size:1.6rem;margin-bottom:0.5rem;">🜄</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Water</div>
+          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">Paint medium</div>
+        </div>
+        <div>
+          <div style="font-size:1.6rem;margin-bottom:0.5rem;">🜃</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Earth</div>
+          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">Crystals</div>
+        </div>
+        <div>
+          <div style="font-size:1.6rem;margin-bottom:0.5rem;">🜁</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Air</div>
+          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">Sage and smoke</div>
+        </div>
+        <div>
+          <div style="font-size:1.6rem;margin-bottom:0.5rem;">✦</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Soul</div>
+          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">The channel</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <h3 class="grad" data-pt="Mergulha nos seus arquétipos." data-en="Dive into your archetypes.">Mergulha nos seus arquétipos.</h3>
-        <p data-pt="Conecta conscientemente com os padrões profundos que regem a sua vida e os seus ciclos." data-en="Consciously connect with the deep patterns that govern your life and your cycles.">Conecta conscientemente com os padrões profundos que regem a sua vida e os seus ciclos.</p>
-      </div>
-      <div class="benefit-card">
-        <h3 class="grad" data-pt="Aprofunda seu processo junguiano." data-en="Deepen your Jungian process.">Aprofunda seu processo junguiano.</h3>
-        <p data-pt="Individuação, sombra e arquétipos ganham um rosto, uma forma, uma cor." data-en="Individuation, shadow and archetypes gain a face, a form, a colour.">Individuação, sombra e arquétipos ganham um rosto, uma forma, uma cor.</p>
-      </div>
-      <div class="benefit-card">
-        <h3 class="grad" data-pt="Carrega um objeto sagrado." data-en="Carry a sacred object.">Carrega um objeto sagrado.</h3>
-        <p data-pt="Uma peça única, feita só para você, criada à mão com amor em Londres." data-en="A unique piece, made just for you, created by hand with love in London.">Uma peça única, feita só para você, criada à mão com amor em Londres.</p>
-      </div>
+
+      <p style="font-size:0.9rem;line-height:1.9;color:var(--text-muted);text-align:center;border-top:1px solid rgba(201,168,76,0.1);padding-top:1.8rem;">Before the first brushstroke, the space is prepared. A candle is lit for intention. White sage and incense clear the air. Crystals are placed to anchor the energy. Water is invited into the work as a living medium.</p>
+      <p style="font-size:0.9rem;line-height:1.9;color:var(--text-muted);text-align:center;margin-top:1rem;">Then the souls arrive. Mine as the channel, yours as the source, your guides and mine meeting in the space between, working in harmony so that what lands on the paper is not invented but received. My guides, The Tower, The Devil and Judgement, hold the space: transformation, shadow and the call of the soul. Powerful presences that know exactly what needs to come through.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;font-weight:300;color:var(--rose-light);text-align:center;margin-top:1.5rem;">"The painting is not made. It is allowed."</p>
     </div>
+
+    <div style="max-width:650px;margin:2.5rem auto 0;text-align:center;padding:1.5rem;border-top:1px solid rgba(201,168,76,0.1);">
+      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">A note on spiritual ethics</p>
+      <p style="font-size:0.9rem;line-height:1.8;color:var(--text-muted);">I believe every serious spiritual practice requires conscious awareness. I do not enter anyone's energetic field without their permission. When you commission a Soul Portrait, your intention and consent are the foundation of everything that follows.</p>
+    </div>
+    <p class="destaque grad" style="text-align:center;margin-top:2.5rem;">"Not decorative art. It is a transmission."</p>
   </div>
 </section>
 
 <div id="urgencia">
-  <p data-pt="Cada obra recebe semanas de atenção, silêncio e canalização. Por isso aceito poucas encomendas por mês. <strong>Se algo em você está dizendo sim agora, confie nisso.</strong>" data-en="Each artwork receives weeks of attention, silence and channelling. That is why I accept only a few commissions per month. <strong>If something in you is saying yes right now, trust that.</strong>">Cada obra recebe semanas de atenção, silêncio e canalização. Por isso aceito poucas encomendas por mês. <strong>Se algo em você está dizendo sim agora, confie nisso.</strong></p>
+  <p>Each artwork receives weeks of full spiritual attention. I accept only a few commissions each month. <strong>If something in you is saying yes right now, trust that.</strong></p>
 </div>
 
-<section id="produto">
+<section id="produtos">
   <div class="container">
-    <div class="produto-intro">
-      <h2 class="section-title grad">Soul Portrait</h2>
-      <p data-pt="Não é retrato do seu rosto. É retrato da sua essência. Do que é invisível, intangível, daquilo que está esperando para ser visto. Cada obra é única e você sempre vai encontrar novos significados ao longo do tempo." data-en="It is not a portrait of your face. It is a portrait of your essence. Of what is invisible, intangible, of what is waiting to be seen. Each artwork is unique and you will always find new meanings over time.">Não é retrato do seu rosto. É retrato da sua essência. Do que é invisível, intangível, daquilo que está esperando para ser visto. Cada obra é única e você sempre vai encontrar novos significados ao longo do tempo.</p>
+    <h2 class="section-title grad">The offerings</h2>
+    <p class="section-sub">Each piece is channelled with care, ritual and full spiritual presence.</p>
+
+    <div class="produtos-grid">
+      <div class="produto-card destaque-card">
+        <span class="produto-tag">Main offering</span>
+        <h3 class="grad">Soul Portrait</h3>
+        <p class="produto-desc">A watercolour channelling of your soul's essence, born through tarot, the five elements and spiritual guidance. Only your name and date of birth are needed.</p>
+        <ul class="lista-produto">
+          <li>Original watercolour painting 24x32cm</li>
+          <li>Tarot reading to connect with your guides</li>
+          <li>Complete soul reading in PDF</li>
+          <li>10 personal channelled affirmations</li>
+          <li>Certificate of authenticity</li>
+          <li>Shipping included worldwide</li>
+        </ul>
+        <p class="preco grad">£333</p>
+        <p class="preco-brazil">For clients in Brazil: R$1.333</p>
+        <p class="preco-sub">Instalment plans available · Ask via the form</p>
+        <a href="https://tally.so/r/OD0b8A" class="btn-whatsapp">Commission yours 🌸</a>
+      </div>
+
+      <div class="produto-card">
+        <span class="produto-tag">By commission</span>
+        <h3 class="grad">Spiritual Mentor Portrait</h3>
+        <p class="produto-desc">A channelled painting of your spiritual guide or mentor energy, called in through ritual and tarot. A sacred piece to honour the invisible presence walking beside you.</p>
+        <ul class="lista-produto">
+          <li>Original watercolour painting 24x32cm</li>
+          <li>Channelled through tarot and ritual</li>
+          <li>Written message from your guide</li>
+          <li>Certificate of authenticity</li>
+          <li>Shipping included worldwide</li>
+        </ul>
+        <br>
+        <a href="https://tally.so/r/OD0b8A" class="btn-outline">Enquire via Tally</a>
+      </div>
     </div>
-    <div class="produto-card">
-      <h2 class="grad">Soul Portrait</h2>
-      <p class="sub" data-pt="Conheça a essência de quem você é." data-en="Discover the essence of who you are.">Conheça a essência de quem você é.</p>
-      <ul class="lista-produto">
-        <li data-pt="Pintura original em aquarela 24x32cm" data-en="Original watercolour painting 24x32cm">Pintura original em aquarela 24x32cm</li>
-        <li data-pt="Leitura arquetípica completa em PDF" data-en="Complete archetypal reading in PDF">Leitura arquetípica completa em PDF</li>
-        <li data-pt="Meditação guiada para conexão com a essência" data-en="Guided meditation for connection with the essence">Meditação guiada para conexão com a essência</li>
-        <li data-pt="10 afirmações pessoais" data-en="10 personal affirmations">10 afirmações pessoais</li>
-        <li data-pt="Certificado de autenticidade" data-en="Certificate of authenticity">Certificado de autenticidade</li>
-        <li data-pt="Frete incluso para qualquer lugar do mundo" data-en="Shipping included worldwide">Frete incluso para qualquer lugar do mundo</li>
-      </ul>
-      <p class="preco grad" id="preco-display">R$1.500 · £200</p>
-      <p class="preco-sub" data-pt="Parcelamento disponível · Consulte via WhatsApp" data-en="Instalment plans available · Ask via WhatsApp">Parcelamento disponível · Consulte via WhatsApp</p>
-      <a href="https://wa.me/message/BRW2PS55L4DXJ1" class="btn-whatsapp" data-pt="Quero o meu 🌸" data-en="I want mine 🌸">Quero o meu 🌸</a>
-    </div>
+
+    <p class="originais-note">Original paintings with specific energies are occasionally available for sale via <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a>. Follow to be notified.</p>
   </div>
 </section>
 
 <section id="sobre">
   <div class="container sobre-inner">
     <div class="sobre-foto">
-      <div class="foto-frame"><span>Foto da Pam</span></div>
+      <div class="foto-frame"><img src="pam.jpg" alt="Pam Leavey" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<span>Foto da Pam</span>'"></div>
     </div>
     <div class="sobre-text">
-      <p style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;" data-pt="A Artista" data-en="The Artist">A Artista</p>
-      <h2 class="section-title" style="margin-bottom:1.5rem;" data-pt="Sou Pam." data-en="I am Pam.">Sou Pam.</h2>
-      <p data-pt="Artista intuitiva e terapeuta junguiana. Passei 9 anos como tatuadora aprendendo o quanto as pessoas carregam em silêncio." data-en="Intuitive artist and Jungian therapist. I spent 9 years as a tattoo artist learning how much people carry in silence.">Artista intuitiva e terapeuta junguiana. Passei 9 anos como tatuadora aprendendo o quanto as pessoas carregam em silêncio.</p>
-      <p data-pt="Depois de um burnout, encontrei Jung, os arquétipos, e a pintura canalizada." data-en="After a burnout, I found Jung, the archetypes, and channelled painting.">Depois de um burnout, encontrei Jung, os arquétipos, e a pintura canalizada.</p>
-      <p data-pt="Hoje pinto almas em aquarela, só com o seu nome e data de nascimento. Cada obra é única, criada à mão em Londres com amor, enviada para qualquer lugar do mundo." data-en="Today I paint souls in watercolour, only with your name and date of birth. Each artwork is unique, created by hand in London with love, sent anywhere in the world.">Hoje pinto almas em aquarela, só com o seu nome e data de nascimento. Cada obra é única, criada à mão em Londres com amor, enviada para qualquer lugar do mundo.</p>
-      <em class="grad" data-pt="Eu pinto o que a sua alma já sabe." data-en="I paint what your soul already knows.">Eu pinto o que a sua alma já sabe.</em>
+      <p style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">The Artist</p>
+      <h2 class="section-title" style="margin-bottom:1.5rem;">I am Pam.</h2>
+      <p>Soul Artist, medium and intuitive painter based in London. I have spent 11 years working intimately with people, learning how much the soul carries in silence.</p>
+      <p>I am a Cancerian, Kin 243 Blue Solar Night of the Eagle Wavespell. I work with tarot, crystal energy, candles, smoke and water as ritual tools for opening the channel before I paint.</p>
+      <p>Each Soul Portrait is a co-creation between me, my guides and yours. I do not paint what I see. I paint what I feel arriving through the space between us.</p>
+      <em class="grad">I paint what your soul already knows.</em>
+      <div class="sobre-badges">
+        <span class="badge">Medium</span>
+        <span class="badge">Soul Artist</span>
+        <span class="badge">Cancerian</span>
+        <span class="badge">Kin 243</span>
+        <span class="badge">London</span>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="faq">
   <div class="container" style="max-width:700px;">
-    <h2 class="section-title grad" data-pt="Dúvidas frequentes." data-en="Frequently asked questions.">Dúvidas frequentes.</h2>
+    <h2 class="section-title grad">Frequently asked questions.</h2>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span data-pt="Você precisa de foto minha?" data-en="Do you need a photo of me?">Você precisa de foto minha?</span> <span>+</span></button>
-      <div class="faq-a"><p data-pt="Não. Trabalho apenas com seu nome e data de nascimento. O que chega através da tinta não é sobre a sua aparência, é sobre o que você carrega." data-en="No. I work only with your name and date of birth. What comes through the paint is not about your appearance, it is about what you carry.">Não. Trabalho apenas com seu nome e data de nascimento. O que chega através da tinta não é sobre a sua aparência, é sobre o que você carrega.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">Do you need a photo of me? <span class="icon">+</span></button>
+      <div class="faq-a"><p>No. I work only with your name and date of birth. What comes through is not about your appearance, it is about what your soul is carrying.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span data-pt="Preciso conhecer Jung para receber minha obra?" data-en="Do I need to know Jung to receive my artwork?">Preciso conhecer Jung para receber minha obra?</span> <span>+</span></button>
-      <div class="faq-a"><p data-pt="Não precisa. A leitura que acompanha a pintura explica tudo de forma acessível e profunda." data-en="Not at all. The reading that accompanies the painting explains everything in an accessible and profound way.">Não precisa. A leitura que acompanha a pintura explica tudo de forma acessível e profunda.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">What does the tarot reading involve? <span class="icon">+</span></button>
+      <div class="faq-a"><p>Before I begin painting, I draw tarot to connect with your spiritual guides and understand the energetic field I will be working with. The cards help open the channel and guide the symbols, colours and forms that emerge in the painting. You receive a note about what came through.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span data-pt="Como funciona o envio?" data-en="How does shipping work?">Como funciona o envio?</span> <span>+</span></button>
-      <div class="faq-a"><p data-pt="A pintura é enviada fisicamente, rastreada, para qualquer lugar do mundo. O frete já está incluído no preço. Para o Reino Unido e Europa o prazo é de 1 a 2 semanas. Para o Brasil, o envio pode levar até 4 semanas adicionais após o despacho." data-en="The painting is shipped physically, tracked, anywhere in the world. Shipping is already included in the price. For the UK and Europe the timeframe is 1 to 2 weeks. For Brazil, shipping can take up to 4 additional weeks after dispatch.">A pintura é enviada fisicamente, rastreada, para qualquer lugar do mundo. O frete já está incluído no preço. Para o Reino Unido e Europa o prazo é de 1 a 2 semanas. Para o Brasil, o envio pode levar até 4 semanas adicionais após o despacho.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">Do I need to know about spirituality or tarot? <span class="icon">+</span></button>
+      <div class="faq-a"><p>Not at all. The soul reading that accompanies your painting explains everything in a warm, accessible way. You only need to be open to receiving.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span data-pt="Quanto tempo demora para ficar pronta?" data-en="How long does it take?">Quanto tempo demora para ficar pronta?</span> <span>+</span></button>
-      <div class="faq-a"><p data-pt="De 2 a 4 semanas do início ao envio. Cada obra é feita com calma e intenção." data-en="2 to 4 weeks from start to shipping. Each artwork is made with care and intention.">De 2 a 4 semanas do início ao envio. Cada obra é feita com calma e intenção.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">How does shipping work? <span class="icon">+</span></button>
+      <div class="faq-a"><p>The painting is shipped physically, tracked, anywhere in the world. Shipping is included in the price. For the UK and Europe the timeframe is 1 to 2 weeks. For Brazil, shipping can take up to 4 additional weeks after dispatch.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span data-pt="Posso parcelar?" data-en="Can I pay in instalments?">Posso parcelar?</span> <span>+</span></button>
-      <div class="faq-a"><p data-pt="Me chama no WhatsApp e conversamos sobre as opções disponíveis para o seu país." data-en="Message me on WhatsApp and we will talk about the options available for your country.">Me chama no WhatsApp e conversamos sobre as opções disponíveis para o seu país.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">How long does it take? <span class="icon">+</span></button>
+      <div class="faq-a"><p>2 to 4 weeks from start to shipping. Each piece is made with full care and ritual intention.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I pay in instalments? <span class="icon">+</span></button>
+      <div class="faq-a"><p>Fill in the enquiry form and mention it, I will get back to you with the options available for your country.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I commission a Soul Portrait as a gift? <span class="icon">+</span></button>
+      <div class="faq-a"><p>Yes, and it makes a deeply meaningful one. However, because I work with the recipient's name and date of birth, it cannot be a complete surprise. The person receiving it will need to know it is coming so they can share those details. This is also a matter of spiritual ethics: I do not enter anyone's energetic field without their conscious permission. Once the painting arrives, the full depth of it will still be a beautiful and unexpected revelation. Just mention it is a gift when you fill in the form.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Will the painting look like me? <span class="icon">+</span></button>
+      <div class="faq-a"><p>It will not be a likeness of your face. It is a portrait of your soul, the symbols, colours, energies and guides that are present in your field. Many people find it deeply recognisable in ways that go beyond appearance.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What if I do not connect with the painting? <span class="icon">+</span></button>
+      <div class="faq-a"><p>In my experience, the connection often arrives in layers. Some people feel it immediately, others need a few days of sitting with the work before it opens. The soul reading helps bridge that space. If something specific feels unclear, I am always here to talk it through.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do I care for the painting? <span class="icon">+</span></button>
+      <div class="faq-a"><p>Your painting arrives with full caring instructions. I recommend framing it behind glass to protect the watercolour, keeping it away from direct sunlight and humidity. A 40x50cm frame works beautifully for the 24x32cm painting, leaving an elegant border around the work.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I choose the colours or style? <span class="icon">+</span></button>
+      <div class="faq-a"><p>The process is fully intuitive and channelled, so I do not work with requests for specific colours or styles. What arrives through the painting is what your soul and guides bring forward. Trusting that is part of the magic of the work.</p>
+      <p style="margin-top:0.8rem;">That said, if you already have a connection with a spiritual mentor or guide, whether through meditation, visualisation or your own practice, and you know their name, energy or colours, you are very welcome to share that with me. It becomes part of the channelling. If you prefer to leave it completely open and let whatever needs to arrive come through, that is equally beautiful. Both paths are honoured.</p></div>
     </div>
   </div>
 </section>
 
 <section id="depoimentos">
   <div class="container">
-    <h2 class="section-title grad" data-pt="Vozes da Alma" data-en="Voices of the Soul">Vozes da Alma</h2>
-    <p class="sub-title" data-pt="Palavras de quem já recebeu a sua obra." data-en="Words from those who have received their artwork.">Palavras de quem já recebeu a sua obra.</p>
+    <h2 class="section-title grad">Voices of the Soul</h2>
+    <p class="sub-title">Words from those who have received their artwork.</p>
     <div class="depo-grid">
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text" data-pt='"Está linda a pintura. São cores que eu estou sentindo a necessidade de vibrar mais. O laranja na criatividade, o fogo que é a ação. O movimento que a imagem traz."' data-en='"The painting is beautiful. These are colours I have been feeling the need to vibrate with more. The orange in creativity, the fire that is action. The movement the image brings."'>"Está linda a pintura. São cores que eu estou sentindo a necessidade de vibrar mais. O laranja na criatividade, o fogo que é a ação. O movimento que a imagem traz."</p>
+        <p class="depo-text">"The painting is beautiful. These are colours I have been feeling the need to vibrate with more. The orange in creativity, the fire that is action. The movement the image brings."</p>
         <p class="depo-author">Carol Camargo</p>
         <p class="depo-handle"><a href="https://www.instagram.com/eu_carolcamargo/" target="_blank">@eu_carolcamargo</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text" data-pt='"Eu ainda tô sem palavras pra explicar o que foi receber essa arte. Em vários momentos parecia que eu tava olhando pra partes minhas que eu mesma ainda não tinha conseguido acessar completamente. Me senti muito vista, acolhida e até mais corajosa comigo mesma."' data-en='"I am still lost for words to explain what it was like to receive this art. At many moments it felt like I was looking at parts of myself I had not been able to fully access yet. I felt very seen, welcomed and even braver with myself."'>"Eu ainda tô sem palavras pra explicar o que foi receber essa arte. Em vários momentos parecia que eu tava olhando pra partes minhas que eu mesma ainda não tinha conseguido acessar completamente. Me senti muito vista, acolhida e até mais corajosa comigo mesma."</p>
+        <p class="depo-text">"I am still lost for words to explain what it was like to receive this art. At many moments it felt like I was looking at parts of myself I had not been able to fully access yet. I felt very seen, welcomed and even braver with myself."</p>
         <p class="depo-author">Amanda</p>
         <p class="depo-handle"><a href="https://www.instagram.com/holisticaimigrante/" target="_blank">@holisticaimigrante</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text" data-pt='"Achei seu trabalho bem didático, fácil de entender, mas também sabia que ali tinha mais que parecia. Me vi em cada linha e cada traço. A arte descreve exatamente o que estou passando."' data-en='"I found your work very clear and easy to understand, but I also knew there was more than it seemed. I saw myself in every line and every stroke. The art describes exactly what I am going through."'>"Achei seu trabalho bem didático, fácil de entender, mas também sabia que ali tinha mais que parecia. Me vi em cada linha e cada traço. A arte descreve exatamente o que estou passando."</p>
+        <p class="depo-text">"I found your work very clear and easy to understand, but I also knew there was more than it seemed. I saw myself in every line and every stroke. The art describes exactly what I am going through."</p>
         <p class="depo-author">Kel Balduino</p>
         <p class="depo-handle"><a href="https://www.instagram.com/kelbalduinocurandeira/" target="_blank">@kelbalduinocurandeira</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text" data-pt='"Quando recebi a arte, era como se algo mais profundo estivesse sendo refletido de volta pra mim. Uma sensação de clareza e conexão comigo mesma. Como se partes de mim que eu não reconhecia tivessem ficado visíveis e válidas."' data-en='"When I received the art, it was as if something deeper was being reflected back to me. A sense of clarity and connection to myself. Like parts of me I did not fully acknowledge were suddenly visible and valid."'>"Quando recebi a arte, era como se algo mais profundo estivesse sendo refletido de volta pra mim. Uma sensação de clareza e conexão comigo mesma. Como se partes de mim que eu não reconhecia tivessem ficado visíveis e válidas."</p>
+        <p class="depo-text">"When I received the art, it was as if something deeper was being reflected back to me. A sense of clarity and connection to myself. Like parts of me I did not fully acknowledge were suddenly visible and valid."</p>
         <p class="depo-author">Vaneska Dantas</p>
         <p class="depo-handle"><a href="https://www.instagram.com/vanidantas5/" target="_blank">@vanidantas5</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text" data-pt='"Você veio com uma belíssima missão cheia de propósito. É incrível como tudo faz sentido. Quero ser propagadora desse lindo e sagrado trabalho de luz."' data-en='"You came with a beautiful mission full of purpose. It is incredible how everything makes sense. I want to spread this beautiful and sacred work of light."'>"Você veio com uma belíssima missão cheia de propósito. É incrível como tudo faz sentido. Quero ser propagadora desse lindo e sagrado trabalho de luz."</p>
+        <p class="depo-text">"You came with a beautiful mission full of purpose. It is incredible how everything makes sense. I want to spread this beautiful and sacred work of light."</p>
         <p class="depo-author">Dra. Karina Nabuco</p>
         <p class="depo-handle"><a href="https://www.instagram.com/karina_nabuco25/" target="_blank">@karina_nabuco25</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text" data-pt='"Ainda estou processando o que foi criado pra mim. Nos últimos dias me pego voltando pra ela, relendo as afirmações e só sentando com tudo que senti ao receber."' data-en='"I am still processing what was created for me. These last few days I keep finding myself going back to it, rereading the affirmations and just sitting with everything I felt while receiving it."'>"Ainda estou processando o que foi criado pra mim. Nos últimos dias me pego voltando pra ela, relendo as afirmações e só sentando com tudo que senti ao receber."</p>
+        <p class="depo-text">"I am still processing what was created for me. These last few days I keep finding myself going back to it, rereading the affirmations and just sitting with everything I felt while receiving it."</p>
         <p class="depo-author">Kasha</p>
         <p class="depo-handle"><a href="https://www.instagram.com/kstasha_/" target="_blank">@kstasha_</a></p>
       </div>
       <div class="depo-card" style="grid-column:2;">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text" data-pt='"Me senti visto e mais alinhado com meu verdadeiro eu. Consigo ver com mais clareza o meu caminho graças à mensagem canalizada."' data-en='"I felt seen and more aligned with my true self. I can see my path ahead more clearly thanks to the channelled message."'>"Me senti visto e mais alinhado com meu verdadeiro eu. Consigo ver com mais clareza o meu caminho graças à mensagem canalizada."</p>
+        <p class="depo-text">"I felt seen and more aligned with my true self. I can see my path ahead more clearly thanks to the channelled message."</p>
         <p class="depo-author">Eduardo Nicolodi</p>
         <p class="depo-handle"><a href="https://www.instagram.com/eduinfinitando/" target="_blank">@eduinfinitando</a></p>
       </div>
@@ -415,44 +536,29 @@ footer { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.1); pa
 
 <section id="cta-final">
   <div class="container">
-    <h2 class="section-title grad" data-pt="A sua alma está esperando." data-en="Your soul is waiting.">A sua alma está esperando.</h2>
-    <p class="sub" data-pt="Se algo em você disse sim enquanto leu isso, esse é o começo." data-en="If something in you said yes while reading this, that is the beginning.">Se algo em você disse sim enquanto leu isso, esse é o começo.</p>
-    <p class="sub2" data-pt='"Cada obra é única, assim como cada pessoa é única. O que chega através da tinta é impossível de prever. É como um presente muito especial do universo."' data-en='"Each artwork is unique, just as each person is unique. What comes through the paint is impossible to predict. It is like a very special gift from the universe."'>"Cada obra é única, assim como cada pessoa é única. O que chega através da tinta é impossível de prever. É como um presente muito especial do universo."</p>
-    <a href="https://wa.me/message/BRW2PS55L4DXJ1" class="btn-primary" style="font-size:0.9rem;padding:1.2rem 3rem;" data-pt="Oi Pam, quero saber mais 🌸" data-en="Hi Pam, I want to know more 🌸">Oi Pam, quero saber mais 🌸</a>
+    <h2 class="section-title grad">Your soul is waiting.</h2>
+    <p class="sub">If something in you said yes while reading this, that is already the beginning.</p>
+    <p class="sub2">"Each piece arrives exactly as it needs to. The guides know what they are doing."</p>
+    <a href="https://tally.so/r/OD0b8A" class="btn-primary" style="font-size:0.9rem;padding:1.2rem 3rem;">Begin your journey 🌸</a>
   </div>
 </section>
 
 <footer>
   <p class="footer-name grad">Pam Leavey</p>
-  <p class="footer-sub" data-pt="Artista da Alma" data-en="Artist of the Soul">Artista da Alma</p>
+  <p class="footer-sub">Soul Artist · London</p>
   <div class="footer-social">
     <a href="https://www.instagram.com/pamleavey.artz/" target="_blank" title="Instagram">IG</a>
-    <a href="https://www.youtube.com/@artistadaalma" target="_blank" title="YouTube">YT</a>
+    <a href="https://youtube.com/@pleaveysoulart" target="_blank" title="YouTube">YT</a>
+    <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank" title="WhatsApp">WA</a>
     <a href="mailto:hello@pamleavey.com" title="Email">✉</a>
   </div>
   <p class="footer-email">hello@pamleavey.com</p>
+  <p class="footer-pt-note">🌸 Comunidade brasileira: para encomendar sua arte, me manda mensagem no <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a> ou no <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank">WhatsApp</a>.</p>
   <hr class="footer-divider">
-  <p class="footer-copy" data-pt="© 2026 Pam Leavey. Todos os direitos reservados." data-en="© 2026 Pam Leavey. All rights reserved.">© 2026 Pam Leavey. Todos os direitos reservados.</p>
+  <p class="footer-copy">© 2026 Pam Leavey. All rights reserved.</p>
 </footer>
 
 <script>
-let currentLang = 'pt';
-
-function toggleLang() {
-  currentLang = currentLang === 'pt' ? 'en' : 'pt';
-  document.getElementById('langBtn').textContent = currentLang === 'pt' ? 'EN' : 'PT';
-  document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'en';
-
-  document.querySelectorAll('[data-pt]').forEach(el => {
-    const text = el.getAttribute('data-' + currentLang);
-    if (text) el.innerHTML = text;
-  });
-
-  // Preço
-  const preco = document.getElementById('preco-display');
-  if (preco) preco.innerHTML = currentLang === 'pt' ? 'R$1.500 · £200' : '£200';
-}
-
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;
   const isOpen = btn.classList.contains('active');
