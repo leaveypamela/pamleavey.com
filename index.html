@@ -20,31 +20,50 @@ body { background: #0A0A0A; color: #F0EDE8; font-family: 'Jost', sans-serif; fon
   text-align: center;
   font-size: 0.8rem;
   line-height: 1.7;
-  color: #9A9080;
+  color: #D4CEC3;
 }
 #disclaimer a { color: #E8C97A; text-decoration: none; }
 #disclaimer a:hover { text-decoration: underline; }
 
 /* NAV */
 nav { position: sticky; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.98); border-bottom: 1px solid rgba(201,168,76,0.08); }
-.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: 0.15em; color: #E8C97A; text-decoration: none; }
-.nav-cta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A84C; border: 1px solid #C9A84C; padding: 0.6rem 1.4rem; border-radius: 2px; text-decoration: none; transition: all 0.3s; }
-.nav-cta:hover { background: #C9A84C; color: #0A0A0A; }
+.nav-logo { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 500; letter-spacing: 0.15em; color: #E8C97A; text-decoration: none; }
+.nav-cta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #0A0A0A; background: linear-gradient(135deg, #C9A84C, #E8C97A); border: 1px solid transparent; padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.4); }
+.nav-right { display: flex; align-items: center; gap: 1.2rem; }
+.lang-toggle { display: flex; gap: 0.2rem; }
+.lang-btn { background: none; border: 1px solid transparent; border-radius: 3px; line-height: 0; padding: 0.2rem; cursor: pointer; opacity: 0.4; transition: opacity 0.3s, border-color 0.3s; display: inline-flex; align-items: center; }
+.lang-btn svg { display: block; border-radius: 6px; width: 26px; height: 18px; }
+.lang-btn:hover { opacity: 0.85; }
+.lang-btn.active { opacity: 1; border-color: rgba(201,168,76,0.6); }
 
 /* HERO */
 #hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 3rem 4rem; position: relative; overflow: hidden; background: #0A0A0A; }
-.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.05) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(232,160,160,0.04) 0%, transparent 45%); }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 28% 42%, rgba(191,227,255,0.16) 0%, transparent 55%), radial-gradient(ellipse at 78% 65%, rgba(212,197,249,0.09) 0%, transparent 50%), radial-gradient(circle at 50% 120%, rgba(191,227,255,0.06) 0%, transparent 45%); }
 .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
-.hero-text h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; color: #F0EDE8; }
-.hero-text h1 em { font-style: italic; display: block; }
-.hero-sub { font-size: 1rem; line-height: 1.8; color: #9A9080; max-width: 420px; margin-bottom: 2.5rem; }
-.btn-primary { display: inline-block; background: linear-gradient(135deg, #C9A84C, #E8C97A); color: #0A0A0A; padding: 1rem 2.2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; }
+.hero-text h1 { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 4vw, 4.2rem); font-weight: 400; line-height: 1.25; letter-spacing: 0.01em; margin-bottom: 1.5rem; color: #F0EDE8; }
+.hero-text h1 em { font-style: italic; display: block; filter: drop-shadow(0 4px 28px rgba(191,227,255,0.3)); background-size: 220% auto; animation: heroShimmer 9s ease-in-out infinite; }
+@keyframes heroShimmer { 0% { background-position: 0% center; } 50% { background-position: 100% center; } 100% { background-position: 0% center; } }
+.sparkle { position: fixed; pointer-events: none; z-index: 9999; line-height: 1; will-change: transform, opacity; text-shadow: 0 0 6px currentColor; animation: sparkleFade 950ms ease-out forwards; }
+@keyframes sparkleFade { 0% { opacity: 0; transform: translate(-50%, -50%) scale(0.3) rotate(0deg); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, calc(-50% - 26px)) scale(1) rotate(45deg); } }
+.sparkle-burst { position: fixed; pointer-events: none; z-index: 9999; line-height: 1; text-shadow: 0 0 6px currentColor; animation: sparkleBurst 850ms ease-out forwards; }
+@keyframes sparkleBurst { 0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2) rotate(0deg); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1) rotate(70deg); } }
+.bg-geo-layer { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
+.bg-geo { position: absolute; opacity: 0.06; }
+.bg-geo-1 { top: 11%; left: -70px; width: 210px; }
+.bg-geo-2 { bottom: 9%; left: -95px; width: 260px; }
+.bg-geo-3 { top: 13%; right: -85px; width: 240px; }
+.bg-geo-4 { bottom: 11%; right: -65px; width: 200px; }
+@media (max-width: 1200px) { .bg-geo-layer { display: none; } }
+.hero-eyebrow { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #F4CBCB; margin-bottom: 1.4rem; text-shadow: 0 0 18px rgba(242,196,196,0.45); }
+.hero-sub { font-size: 1.05rem; line-height: 1.85; color: #ECE7DE; max-width: 430px; margin-bottom: 2.5rem; padding-left: 1.1rem; border-left: 2px solid rgba(201,168,76,0.45); }
+.btn-primary { display: inline-block; background: linear-gradient(135deg, #C9A84C, #E8C97A); color: #0A0A0A; padding: 1rem 2.2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 6px; transition: all 0.3s; }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
 .hero-art { position: relative; height: 420px; width: 100%; order: 2; }
 .hero-text { order: 1; }
 .art-card { position: absolute; width: 200px; height: 260px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(201,168,76,0.2); box-shadow: 0 20px 60px rgba(0,0,0,0.5); transition: transform 0.3s, z-index 0.3s; }
 .art-card:hover { z-index: 10 !important; }
-.art-card-placeholder { width: 100%; height: 100%; background: #1A1A1A; display: flex; align-items: center; justify-content: center; color: #9A9080; font-size: 0.75rem; letter-spacing: 0.1em; }
+.art-card-placeholder { width: 100%; height: 100%; background: #1A1A1A; display: flex; align-items: center; justify-content: center; color: #D4CEC3; font-size: 0.75rem; letter-spacing: 0.1em; }
 .art-card:nth-child(1) { top: 40px; left: 0px; transform: rotate(-5deg); z-index: 1; }
 .art-card:nth-child(1):hover { transform: rotate(-5deg) translateY(-8px); }
 .art-card:nth-child(2) { top: 20px; left: 110px; transform: rotate(0deg); z-index: 3; width: 220px; height: 280px; border-color: rgba(201,168,76,0.45); }
@@ -53,7 +72,7 @@ nav { position: sticky; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 3
 .art-card:nth-child(3):hover { transform: rotate(5deg) translateY(-8px); }
 
 /* CARROSSEL */
-#carrossel { padding: 2rem 0; overflow: hidden; background: #111111; border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); }
+#carrossel { padding: 2rem 0; overflow: hidden; background: #0A0A0A; border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); }
 .carrossel-track { display: flex; gap: 1rem; animation: slide 30s linear infinite; width: max-content; }
 .carrossel-item { width: 180px; height: 220px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(201,168,76,0.15); flex-shrink: 0; }
 @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -61,31 +80,31 @@ nav { position: sticky; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 3
 /* SEÇÕES */
 section { padding: 6rem 3rem; }
 .container { max-width: 1100px; margin: 0 auto; }
-.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
+.section-title { font-family: 'Cinzel', serif; font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 400; line-height: 1.35; margin-bottom: 1.5rem; filter: drop-shadow(0 0 20px rgba(191,227,255,0.22)); }
 
 /* PORTAL */
-#portal { background: #111111; }
+#portal { background: #0A0A0A; }
 .portal-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-.portal-text p { font-size: 1.05rem; line-height: 1.9; color: #9A9080; margin-bottom: 1.2rem; }
+.portal-text p { font-size: 1.05rem; line-height: 1.9; color: #D4CEC3; margin-bottom: 1.2rem; }
 .portal-text p strong { color: #F0EDE8; font-weight: 400; }
 
 /* IMPACTO */
 #impacto { text-align: center; background: #0A0A0A; }
 #impacto .section-title { max-width: 700px; margin: 0 auto 1.5rem; }
-#impacto p { font-size: 1rem; line-height: 1.8; color: #9A9080; max-width: 600px; margin: 0 auto 3rem; }
+#impacto p { font-size: 1rem; line-height: 1.8; color: #D4CEC3; max-width: 600px; margin: 0 auto 3rem; }
 .eye-container { margin: 3rem auto 0; width: 120px; opacity: 0.7; }
 
 /* PROCESSO */
-#processo { background: #111111; text-align: center; }
+#processo { background: #0A0A0A; text-align: center; }
 #processo .section-title { margin-bottom: 2rem; }
-#processo .body-text { font-size: 1rem; line-height: 1.9; color: #9A9080; max-width: 650px; margin: 0 auto 1.5rem; }
+#processo .body-text { font-size: 1rem; line-height: 1.9; color: #D4CEC3; max-width: 650px; margin: 0 auto 1.5rem; }
 .destaque { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; font-weight: 300; margin-top: 2rem; }
 
 /* ELEMENTOS */
 .elementos-grid { display: flex; justify-content: center; gap: 2rem; margin: 3rem auto; flex-wrap: wrap; max-width: 600px; }
 .elemento { text-align: center; }
 .elemento-symbol { font-size: 1.8rem; margin-bottom: 0.4rem; }
-.elemento-name { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #9A9080; }
+.elemento-name { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #D4CEC3; }
 
 /* CAMADAS */
 .camadas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: left; }
@@ -94,25 +113,31 @@ section { padding: 6rem 3rem; }
 /* PRODUTOS */
 #produtos { background: #0A0A0A; }
 #produtos .section-title { text-align: center; margin-bottom: 0.8rem; }
-#produtos .section-sub { text-align: center; color: #9A9080; font-size: 0.95rem; margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+#produtos .section-sub { text-align: center; color: #D4CEC3; font-size: 0.95rem; margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 .produtos-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
 .produto-card { background: #1A1A1A; border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; padding: 2.5rem; }
 .produto-card.destaque-card { border-color: rgba(201,168,76,0.45); }
 .produto-tag { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C; margin-bottom: 1rem; display: block; }
-.produto-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; margin-bottom: 0.5rem; }
-.produto-card .produto-desc { font-size: 0.9rem; line-height: 1.7; color: #9A9080; margin-bottom: 1.8rem; }
+.produto-card h3 { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 500; line-height: 1.3; margin-bottom: 0.5rem; }
+.produto-card .produto-desc { font-size: 0.9rem; line-height: 1.7; color: #D4CEC3; margin-bottom: 1.8rem; }
 .lista-produto { list-style: none; margin-bottom: 2rem; }
-.lista-produto li { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; display: flex; align-items: center; gap: 0.8rem; color: #9A9080; }
+.lista-produto li { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; display: flex; align-items: center; gap: 0.8rem; color: #D4CEC3; }
 .lista-produto li:last-child { border-bottom: none; }
 .lista-produto li::before { content: '✦'; color: #C9A84C; font-size: 0.6rem; flex-shrink: 0; }
 .preco { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; margin-bottom: 0.2rem; }
-.preco-brazil { font-size: 0.8rem; color: #9A9080; margin-bottom: 0.3rem; }
-.preco-sub { font-size: 0.75rem; color: #9A9080; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
-.btn-whatsapp { display: inline-block; background: linear-gradient(135deg, #C9A84C, #E8C97A); color: #0A0A0A; padding: 1rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; width: 100%; text-align: center; }
+.preco-brazil { font-size: 0.8rem; color: #D4CEC3; margin-bottom: 0.3rem; }
+.preco-brazil:empty { display: none; }
+.preco-grid { margin-bottom: 1.5rem; }
+.preco-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.preco-row:last-child { border-bottom: none; }
+.preco-region { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C; }
+.preco-val { font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; font-weight: 300; line-height: 1; }
+.preco-sub { font-size: 0.75rem; color: #D4CEC3; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+.btn-whatsapp { display: inline-block; background: linear-gradient(135deg, #C9A84C, #E8C97A); color: #0A0A0A; padding: 1rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 6px; transition: all 0.3s; width: 100%; text-align: center; }
 .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
-.btn-outline { display: inline-block; background: transparent; color: #C9A84C; padding: 1rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; border: 1px solid rgba(201,168,76,0.5); transition: all 0.3s; width: 100%; text-align: center; }
+.btn-outline { display: inline-block; background: transparent; color: #C9A84C; padding: 1rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 6px; border: 1px solid rgba(201,168,76,0.5); transition: all 0.3s; width: 100%; text-align: center; }
 .btn-outline:hover { border-color: #C9A84C; background: rgba(201,168,76,0.08); }
-.originais-note { text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #9A9080; font-style: italic; }
+.originais-note { text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #D4CEC3; font-style: italic; }
 .originais-note a { color: #E8C97A; text-decoration: none; }
 .originais-note a:hover { text-decoration: underline; }
 
@@ -121,14 +146,14 @@ section { padding: 6rem 3rem; }
 #urgencia p { font-size: 0.9rem; letter-spacing: 0.05em; line-height: 1.7; max-width: 700px; margin: 0 auto; }
 
 /* SOBRE */
-#sobre { background: #111111; }
+#sobre { background: #0A0A0A; }
 .sobre-inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center; }
-.foto-frame { width: 100%; aspect-ratio: 3/4; background: #1A1A1A; border-radius: 4px; border: 1px solid rgba(201,168,76,0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; color: #9A9080; font-size: 0.75rem; letter-spacing: 0.1em; }
+.foto-frame { width: 100%; aspect-ratio: 3/4; background: #1A1A1A; border-radius: 4px; border: 1px solid rgba(201,168,76,0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; color: #D4CEC3; font-size: 0.75rem; letter-spacing: 0.1em; }
 .foto-frame img { width: 100%; height: 100%; object-fit: cover; }
-.sobre-text p { font-size: 1rem; line-height: 1.9; color: #9A9080; margin-bottom: 1.2rem; }
+.sobre-text p { font-size: 1rem; line-height: 1.9; color: #D4CEC3; margin-bottom: 1.2rem; }
 .sobre-text em { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; font-weight: 300; display: block; margin-top: 1.5rem; }
 .sobre-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-.badge { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A84C; border: 1px solid rgba(201,168,76,0.3); padding: 0.4rem 0.9rem; border-radius: 2px; }
+.badge { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A84C; border: 1px solid rgba(201,168,76,0.3); padding: 0.4rem 0.9rem; border-radius: 6px; }
 
 /* FAQ */
 #faq { background: #0A0A0A; }
@@ -139,42 +164,48 @@ section { padding: 6rem 3rem; }
 .faq-q span.icon { color: #C9A84C; font-size: 1.2rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
 .faq-q.active span.icon { transform: rotate(45deg); }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.faq-a p { font-size: 0.95rem; line-height: 1.8; color: #9A9080; padding-bottom: 1.5rem; }
+.faq-a p { font-size: 0.95rem; line-height: 1.8; color: #D4CEC3; padding-bottom: 1.5rem; }
 
 /* DEPOIMENTOS */
-#depoimentos { background: #111111; }
+#depoimentos { background: #0A0A0A; }
 #depoimentos .section-title { text-align: center; margin-bottom: 0.5rem; }
-#depoimentos .sub-title { text-align: center; color: #9A9080; font-size: 0.9rem; margin-bottom: 3.5rem; }
+#depoimentos .sub-title { text-align: center; color: #D4CEC3; font-size: 0.9rem; margin-bottom: 3.5rem; }
 .depo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .depo-card { background: #222222; border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; padding: 2rem; transition: border-color 0.3s; }
 .depo-card:hover { border-color: rgba(201,168,76,0.2); }
+.camada-card, .produto-card, .depo-card { transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; }
+.camada-card:hover, .produto-card:hover, .depo-card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(191,227,255,0.07); border-color: rgba(201,168,76,0.4); }
 .depo-stars { color: #C9A84C; font-size: 0.75rem; letter-spacing: 0.2em; margin-bottom: 1.2rem; }
 .depo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; font-weight: 300; line-height: 1.7; color: #F2C4C4; margin-bottom: 1.5rem; }
 .depo-author { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #C9A84C; margin-bottom: 0.3rem; }
-.depo-handle a { font-size: 0.8rem; color: #9A9080; text-decoration: none; transition: color 0.3s; }
+.depo-handle a { font-size: 0.8rem; color: #D4CEC3; text-decoration: none; transition: color 0.3s; }
 .depo-handle a:hover { color: #E8C97A; }
 
 /* CTA FINAL */
 #cta-final { background: #0A0A0A; text-align: center; padding: 8rem 3rem; }
 #cta-final .section-title { margin-bottom: 1rem; }
-#cta-final .sub { font-size: 1rem; line-height: 1.8; color: #9A9080; max-width: 550px; margin: 0 auto 1rem; }
-#cta-final .sub2 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #9A9080; max-width: 550px; margin: 0 auto 3rem; }
+#cta-final .sub { font-size: 1rem; line-height: 1.8; color: #D4CEC3; max-width: 550px; margin: 0 auto 1rem; }
+#cta-final .sub2 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #D4CEC3; max-width: 550px; margin: 0 auto 3rem; }
 
 /* FOOTER */
-footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); padding: 4rem 3rem; text-align: center; }
-.footer-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; margin-bottom: 0.3rem; }
-.footer-sub { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #9A9080; margin-bottom: 2rem; }
+footer { background: #0A0A0A; border-top: 1px solid rgba(201,168,76,0.1); padding: 4rem 3rem; text-align: center; }
+.footer-name { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 500; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+.footer-sub { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4CEC3; margin-bottom: 2rem; }
 .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
 .footer-social a { width: 42px; height: 42px; border: 1px solid rgba(201,168,76,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #C9A84C; text-decoration: none; font-size: 0.85rem; transition: all 0.3s; }
 .footer-social a:hover { background: #C9A84C; color: #0A0A0A; }
-.footer-email { font-size: 0.85rem; color: #9A9080; margin-bottom: 1.5rem; }
-.footer-pt-note { font-size: 0.8rem; font-style: italic; color: #9A9080; margin-bottom: 2rem; line-height: 1.6; }
+.footer-email { font-size: 0.85rem; color: #D4CEC3; margin-bottom: 1.5rem; }
+.footer-pt-note { font-size: 0.8rem; font-style: italic; color: #D4CEC3; margin-bottom: 2rem; line-height: 1.6; }
 .footer-pt-note a { color: #E8C97A; text-decoration: none; }
 .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin-bottom: 1.5rem; }
-.footer-copy { font-size: 0.75rem; color: #9A9080; letter-spacing: 0.05em; }
+.footer-copy { font-size: 0.75rem; color: #D4CEC3; letter-spacing: 0.05em; }
 
 @media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
+  nav { padding: 0.9rem 1.2rem; }
+  .nav-right { gap: 0.7rem; }
+  .nav-cta { padding: 0.5rem 0.9rem; font-size: 0.65rem; letter-spacing: 0.08em; }
+  .nav-logo { font-size: 1.05rem; }
+  .lang-btn { font-size: 0.95rem; padding: 0.2rem 0.25rem; }
   section { padding: 4rem 1.5rem; }
   #hero { padding: 9rem 1.5rem 3rem; }
   .hero-inner { grid-template-columns: 1fr; }
@@ -193,17 +224,28 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="bg-geo-layer" aria-hidden="true"><svg class="bg-geo bg-geo-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g stroke="#C9A84C" stroke-width="0.5" fill="none"><circle cx="50" cy="50" r="20"/><circle cx="50" cy="30" r="20"/><circle cx="67.3" cy="40" r="20"/><circle cx="67.3" cy="60" r="20"/><circle cx="50" cy="70" r="20"/><circle cx="32.7" cy="60" r="20"/><circle cx="32.7" cy="40" r="20"/></g></svg><svg class="bg-geo bg-geo-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g stroke="#C9A84C" stroke-width="0.5" fill="none"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="27"/><polygon points="50,14 81,68 19,68"/></g></svg><svg class="bg-geo bg-geo-3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g stroke="#C9A84C" stroke-width="0.5" fill="none"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="27"/><polygon points="50,14 81,68 19,68"/></g></svg><svg class="bg-geo bg-geo-4" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g stroke="#C9A84C" stroke-width="0.5" fill="none"><circle cx="50" cy="50" r="20"/><circle cx="50" cy="30" r="20"/><circle cx="67.3" cy="40" r="20"/><circle cx="67.3" cy="60" r="20"/><circle cx="50" cy="70" r="20"/><circle cx="32.7" cy="60" r="20"/><circle cx="32.7" cy="40" r="20"/></g></svg></div>
 
-<div id="disclaimer">
-  🌸 Para a minha comunidade brasileira: este site está em inglês, mas o atendimento continua igual. Para encomendar sua arte, é só me enviar uma mensagem no <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a> ou no <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank">WhatsApp</a>.
+<div id="disclaimer" data-i18n="disclaimer">
+  🌸 Brazilian community, this whole site is available in Portuguese. Use the Brazil flag at the top to switch. To order, you can also message me on <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a> or <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank">WhatsApp</a>.
 </div>
 
 <nav>
   <a href="#" class="nav-logo">🌙 Pam Leavey</a>
-  <a href="https://tally.so/r/OD0b8A" class="nav-cta">Commission yours</a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="pt" title="Português" aria-label="Português">
+        <svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="20" fill="#009b3a"/><polygon points="14,2.2 25.8,10 14,17.8 2.2,10" fill="#fedf00"/><circle cx="14" cy="10" r="4.3" fill="#002776"/></svg>
+      </button>
+      <button class="lang-btn" data-lang="en" title="English" aria-label="English">
+        <svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><clipPath id="uk"><rect width="28" height="20"/></clipPath><g clip-path="url(#uk)"><rect width="28" height="20" fill="#012169"/><path d="M0,0 L28,20 M28,0 L0,20" stroke="#fff" stroke-width="4"/><path d="M0,0 L28,20 M28,0 L0,20" stroke="#C8102E" stroke-width="2.2"/><path d="M14,0 V20 M0,10 H28" stroke="#fff" stroke-width="6"/><path d="M14,0 V20 M0,10 H28" stroke="#C8102E" stroke-width="3.6"/></g></svg>
+      </button>
+    </div>
+    <a href="https://tally.so/r/OD0b8A" class="nav-cta cta-js" data-i18n="nav.cta">Commission yours</a>
+  </div>
 </nav>
 
 <section id="hero">
@@ -215,12 +257,13 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
       <div class="art-card"><img src="3.jpg" alt="Soul Portrait" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<div class=art-card-placeholder>Soul Portrait</div>'"></div>
     </div>
     <div class="hero-text">
-      <h1>
-        <span>No two frequencies are the same.</span>
-        <em class="grad">No two paintings ever are.</em>
+      <p class="hero-eyebrow" data-i18n="hero.eyebrow">Portal · Mirror · Talisman</p>
+      <h1 data-i18n="hero.h1">
+        <span>What if I created</span>
+        <em class="grad-iridescent">a portal, just for you?</em>
       </h1>
-      <p class="hero-sub">A sacred portal of soul awakening and energetic alignment, hand-channelled through ritual, the five elements and the wisdom of your spiritual guides.</p>
-      <a href="https://tally.so/r/OD0b8A" class="btn-primary">Begin your journey</a>
+      <p class="hero-sub" data-i18n="hero.sub">A hand-channelled watercolour, created only from your name and date of birth. A unique portal to your essence: a place to enter, to see yourself, and to carry with you.</p>
+      <a href="https://tally.so/r/OD0b8A" class="btn-primary cta-js" data-i18n="hero.cta">Begin your journey</a>
     </div>
   </div>
 </section>
@@ -260,26 +303,26 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
   </div>
 </div>
 
-<section id="manifesto" style="padding:5rem 3rem;background:#0A0A0A;text-align:center;">
-  <div class="container" style="max-width:750px;">
-    <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:2rem;">The journey of awakening</p>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;line-height:1.4;margin-bottom:2rem;">
-      <span class="grad">Art as a portal.</span><br>
-      <span style="color:#F0EDE8;">Awakening as the destination.</span><br>
-      <span style="color:#9A9080;font-style:italic;">Alignment as the gift.</span>
+<section id="manifesto" style="padding:5rem 3rem;background:radial-gradient(ellipse at 50% 35%, rgba(212,197,249,0.07) 0%, transparent 60%), #0A0A0A;text-align:center;position:relative;overflow:hidden;">
+  <div class="container" style="max-width:750px;position:relative;z-index:1;">
+    <p style="font-size:0.78rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:#F4CBCB;margin-bottom:2rem;text-shadow:0 0 18px rgba(242,196,196,0.45);" data-i18n="manifesto.label">The PET method</p>
+    <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.4rem,2.6vw,2.1rem);font-weight:400;line-height:1.7;margin-bottom:2rem;color:#D4CEC3;" data-i18n="manifesto.h2">
+      <span>A <strong style="color:#E8C97A;font-weight:600;">portal</strong> to enter.</span><br>
+      <span>A <strong style="color:#BFE3FF;font-weight:600;">mirror</strong> to see yourself.</span><br>
+      <span>A <strong style="color:#F2C4C4;font-weight:600;">talisman</strong> to carry.</span>
     </h2>
-    <p style="font-size:1rem;line-height:1.9;color:#9A9080;margin-bottom:1.5rem;">Every Soul Portrait follows the same arc the soul itself walks. It begins in what is hidden, moves through what is transforming, and arrives at what is finally seen. People describe receiving their piece as a homecoming, something they did not know they were searching for until it arrived.</p>
-    <p style="font-size:1rem;line-height:1.9;color:#9A9080;">This is soul awakening made tangible. Energetic alignment given form. A transmission that continues to unfold long after the painting reaches your hands.</p>
+    <p style="font-size:1rem;line-height:1.9;color:#D4CEC3;margin-bottom:1.5rem;" data-i18n="manifesto.p1">Each Soul Portrait carries these three dimensions at once. It is not a likeness of your face, and it does not claim to tell you who you are. It is an image that arrives through channelling and offers itself to you, so you can find in it what is yours.</p>
+    <p style="font-size:1rem;line-height:1.9;color:#D4CEC3;" data-i18n="manifesto.p2">Many people sit with their piece and find more of something they were needing: love, hope, confidence, a quiet sense of their own power. Not grand promises, just small openings for everyday life.</p>
   </div>
 </section>
 
 <section id="portal">
   <div class="container portal-inner">
     <div class="portal-text">
-      <h2 class="section-title grad-iridescent">Have you ever felt this?</h2>
-      <p>That quiet pull. Something in you that knows there is more, a layer beneath the surface that has never been fully seen, never been given form.</p>
-      <p>You feel it in certain songs, certain places, certain moments of stillness. <strong>Your soul is already speaking. It is waiting for someone to listen.</strong></p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:#F2C4C4;">This is where the journey begins, in the part of you that already knows, long before the mind catches up.</p>
+      <h2 class="section-title grad-iridescent" data-i18n="portal.h2">Have you ever felt this?</h2>
+      <p data-i18n="portal.p1">Maybe a quiet curiosity about yourself. A sense that there is more underneath, something you have not yet put into words or given a form.</p>
+      <p data-i18n="portal.p2">You might feel it in certain songs, certain places, certain moments of stillness. <strong>If something in you is curious, that is enough to begin.</strong></p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#D4CEC3;" data-i18n="portal.p3">This is where a Soul Portrait begins. Not with answers, but with <strong style="color:#F2C4C4;font-weight:600;">an invitation to look at yourself.</strong></p>
     </div>
     <div style="position:relative;">
       <img src="15.jpg" alt="Soul Portrait" style="width:100%;max-width:380px;display:block;margin:0 auto;border-radius:4px;border:1px solid rgba(201,168,76,0.2);box-shadow:0 20px 60px rgba(0,0,0,0.6);" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
@@ -298,12 +341,12 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
 
 <section id="impacto">
   <div class="container">
-    <h2 class="section-title">
-      <span class="grad">Your soul already knows who you are.</span><br>
-      <span>It is just waiting to be seen.</span>
+    <h2 class="section-title" data-i18n="impacto.h2">
+      <span class="grad">I will not tell you who you are.</span><br>
+      <span>I will hand you a mirror, and let you look.</span>
     </h2>
-    <p>Through spiritual channelling, tarot and the wisdom of guides, I translate the invisible layers of your being into colour, symbol and form. Each painting is a sacred transmission, arriving exactly as it needs to.</p>
-    <p style="font-size:1rem;line-height:1.8;color:#9A9080;max-width:600px;margin:1.5rem auto 0;">What was once felt only as a quiet pull becomes something you can hold, look at and recognise. The unseen becomes seen.</p>
+    <p data-i18n="impacto.p1">Through channelling, tarot and the elements, I translate what arrives into colour, symbol and form. I do not interpret your life for you. I bring an image, and the meaning you find in it is yours.</p>
+    <p style="font-size:1rem;line-height:1.8;color:#D4CEC3;max-width:600px;margin:1.5rem auto 0;" data-i18n="impacto.p2">Some people recognise themselves right away. Others sit with the piece for days before something opens. Both are welcome.</p>
     <div class="eye-container">
       <svg viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M5 35 Q50 5 95 35 Q50 65 5 35Z" stroke="rgba(201,168,76,0.4)" stroke-width="1" fill="none"/>
@@ -321,28 +364,156 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
   </div>
 </section>
 
-<section id="camadas" style="background:#111111;text-align:center;">
+<section id="camadas" style="background:#0A0A0A;text-align:center;">
   <div class="container" style="max-width:950px;">
-    <h2 class="section-title grad-iridescent">Portal. Talisman. Mirror.</h2>
-    <p style="font-size:1rem;line-height:1.9;color:#9A9080;max-width:650px;margin:0 auto 3rem;">Every Soul Portrait moves through three layers, the same arc the soul itself walks on its way to awakening: from what is hidden, through what is transforming, to what is finally seen.</p>
+    <h2 class="section-title grad-iridescent" data-i18n="camadas.h2">Portal. Mirror. Talisman.</h2>
+    <p style="font-size:1rem;line-height:1.9;color:#D4CEC3;max-width:650px;margin:0 auto 2.5rem;" data-i18n="camadas.intro">Each Soul Portrait carries three dimensions at once. You enter, you see yourself, and you carry it with you. This is the PET method.</p>
+    <div style="margin:0 auto 3.5rem;max-width:540px;">
+      <svg width="100%" viewBox="0 0 690 630" role="img" style="" xmlns="http://www.w3.org/2000/svg">
+<title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Triângulo Soul Portrait PET — Geometria Sagrada</title>
+<desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Triângulo dourado PET com Flor da Vida no centro, Vesica Piscis e proporção áurea nas medidas.</desc>
+
+<defs>
+  
+
+  <radialGradient id="glowG" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#D4B0F0" stop-opacity="0.15"/>
+    <stop offset="60%" stop-color="#C8A8E8" stop-opacity="0.04"/>
+    <stop offset="100%" stop-color="#C8A8E8" stop-opacity="0"/>
+  </radialGradient>
+
+  <radialGradient id="vlilasG" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#C8A8E8" stop-opacity="0.1"/>
+    <stop offset="100%" stop-color="#C8A8E8" stop-opacity="0"/>
+  </radialGradient>
+
+  <clipPath id="triClip">
+    <polygon points="340,75 105,470 575,470"/>
+  </clipPath>
+<mask id="imagine-text-gaps-snnu7s" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="690" height="630" fill="white"/><rect x="518" y="322.2779541015625" width="15.162360191345215" height="14.660257339477539" fill="black" rx="2"/><rect x="297.2278747558594" y="23.46328353881836" width="85.5442886352539" height="22.413171768188477" fill="black" rx="2"/><rect x="332.1311340332031" y="43.27797317504883" width="15.737771987915039" height="14.660257339477539" fill="black" rx="2"/><rect x="30.497058868408203" y="495.4632873535156" width="99.00588989257812" height="22.413171768188477" fill="black" rx="2"/><rect x="71.93425750732422" y="514.2779541015625" width="16.131474494934082" height="14.660257339477539" fill="black" rx="2"/><rect x="551.1102905273438" y="495.4632873535156" width="96.81024169921875" height="22.413171768188477" fill="black" rx="2"/><rect x="591.1165771484375" y="514.2779541015625" width="16.797740936279297" height="14.660257339477539" fill="black" rx="2"/><rect x="288.6421203613281" y="353.308837890625" width="101.74666595458984" height="15.629371643066406" fill="black" rx="2"/><rect x="330.29888916015625" y="368.308837890625" width="19.40223503112793" height="15.629371643066406" fill="black" rx="2"/><rect x="293.9722595214844" y="545.3397216796875" width="92.05552673339844" height="17.56760025024414" fill="black" rx="2"/><rect x="315.4820251464844" y="560.2779541015625" width="49.03593444824219" height="14.660257339477539" fill="black" rx="2"/></mask></defs>
+
+
+
+
+<ellipse cx="340" cy="295" rx="220" ry="200" fill="url(#glowG)" style="stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<circle cx="280" cy="295" r="130" fill="none" stroke="#C9A84C" stroke-width="0.4" stroke-opacity="0.18" style="fill:none;stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="400" cy="295" r="130" fill="none" stroke="#C9A84C" stroke-width="0.4" stroke-opacity="0.18" style="fill:none;stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<path d="M340,172 Q270,220 270,295 Q270,370 340,418 Q410,370 410,295 Q410,220 340,172Z" fill="#C9A84C" fill-opacity="0.03" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.25" style="fill:rgb(201, 168, 76);stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+
+<polygon points="340,75 105,470 575,470" fill="none" stroke="#C9A84C" stroke-width="1.2" stroke-opacity="0.85" style="fill:none;stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+
+<line x1="175" y1="329" x2="505" y2="329" stroke="#C9A84C" stroke-width="0.4" stroke-opacity="0.3" style="fill:rgb(0, 0, 0);stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="340" cy="329" r="1.8" fill="#C9A84C" fill-opacity="0.6" style="fill:rgb(201, 168, 76);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<text x="522" y="333" font-family="'Cormorant Garamond', serif" font-size="9" fill="#C9A84C" fill-opacity="0.5" letter-spacing="0.1em" style="fill:rgb(201, 168, 76);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto">φ</text>
+
+
+<polygon points="340,143 178,427 502,427" fill="none" stroke="#E8A0A0" stroke-width="0.7" stroke-opacity="0.45" style="fill:none;stroke:rgb(232, 160, 160);color:rgb(11, 11, 11);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<polygon points="340,202 236,390 444,390" fill="none" stroke="#B8C8E8" stroke-width="0.55" stroke-opacity="0.4" style="fill:none;stroke:rgb(184, 200, 232);color:rgb(11, 11, 11);stroke-width:0.55px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<polygon points="340,254 288,357 392,357" fill="none" stroke="#FFFFFF" stroke-width="0.45" stroke-opacity="0.25" style="fill:none;stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:0.45px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<line x1="340" y1="75" x2="340" y2="470" stroke="#C9A84C" stroke-width="0.4" stroke-opacity="0.22" mask="url(#imagine-text-gaps-snnu7s)" style="fill:rgb(0, 0, 0);stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="105" y1="470" x2="575" y2="470" stroke="#C9A84C" stroke-width="0.4" stroke-opacity="0.22" style="fill:rgb(0, 0, 0);stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="105" y1="470" x2="575" y2="75" stroke="#E8A0A0" stroke-width="0.35" stroke-opacity="0.28" style="fill:rgb(0, 0, 0);stroke:rgb(232, 160, 160);color:rgb(11, 11, 11);stroke-width:0.35px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="575" y1="470" x2="105" y2="75" stroke="#B8C8E8" stroke-width="0.35" stroke-opacity="0.28" style="fill:rgb(0, 0, 0);stroke:rgb(184, 200, 232);color:rgb(11, 11, 11);stroke-width:0.35px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="152" y1="305" x2="528" y2="305" stroke="#FFFFFF" stroke-width="0.35" stroke-opacity="0.28" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:0.35px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="222" y1="168" x2="222" y2="460" stroke="#FFFFFF" stroke-width="0.3" stroke-opacity="0.12" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:0.3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="458" y1="168" x2="458" y2="460" stroke="#FFFFFF" stroke-width="0.3" stroke-opacity="0.12" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:0.3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+
+
+
+<circle cx="340" cy="295" r="24" fill="none" stroke="#D4B0F0" stroke-width="0.6" stroke-opacity="0.7" style="fill:none;stroke:rgb(212, 176, 240);color:rgb(11, 11, 11);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<circle cx="340" cy="271" r="24" fill="none" stroke="#D4B0F0" stroke-width="0.6" stroke-opacity="0.6" style="fill:none;stroke:rgb(212, 176, 240);color:rgb(11, 11, 11);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="361" cy="283" r="24" fill="none" stroke="#E8A0A0" stroke-width="0.6" stroke-opacity="0.55" style="fill:none;stroke:rgb(232, 160, 160);color:rgb(11, 11, 11);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="361" cy="307" r="24" fill="none" stroke="#B8C8E8" stroke-width="0.6" stroke-opacity="0.55" style="fill:none;stroke:rgb(184, 200, 232);color:rgb(11, 11, 11);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="340" cy="319" r="24" fill="none" stroke="#D4B0F0" stroke-width="0.6" stroke-opacity="0.6" style="fill:none;stroke:rgb(212, 176, 240);color:rgb(11, 11, 11);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="319" cy="307" r="24" fill="none" stroke="#E8A0A0" stroke-width="0.6" stroke-opacity="0.55" style="fill:none;stroke:rgb(232, 160, 160);color:rgb(11, 11, 11);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="319" cy="283" r="24" fill="none" stroke="#B8C8E8" stroke-width="0.6" stroke-opacity="0.55" style="fill:none;stroke:rgb(184, 200, 232);color:rgb(11, 11, 11);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<circle cx="340" cy="247" r="24" fill="none" stroke="#D4B0F0" stroke-width="0.4" stroke-opacity="0.3" style="fill:none;stroke:rgb(212, 176, 240);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="382" cy="259" r="24" fill="none" stroke="#E8A0A0" stroke-width="0.4" stroke-opacity="0.28" style="fill:none;stroke:rgb(232, 160, 160);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="403" cy="295" r="24" fill="none" stroke="#B8C8E8" stroke-width="0.4" stroke-opacity="0.28" style="fill:none;stroke:rgb(184, 200, 232);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="382" cy="331" r="24" fill="none" stroke="#D4B0F0" stroke-width="0.4" stroke-opacity="0.3" style="fill:none;stroke:rgb(212, 176, 240);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="340" cy="343" r="24" fill="none" stroke="#E8A0A0" stroke-width="0.4" stroke-opacity="0.28" style="fill:none;stroke:rgb(232, 160, 160);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="298" cy="331" r="24" fill="none" stroke="#B8C8E8" stroke-width="0.4" stroke-opacity="0.28" style="fill:none;stroke:rgb(184, 200, 232);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="277" cy="295" r="24" fill="none" stroke="#D4B0F0" stroke-width="0.4" stroke-opacity="0.3" style="fill:none;stroke:rgb(212, 176, 240);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="298" cy="259" r="24" fill="none" stroke="#E8A0A0" stroke-width="0.4" stroke-opacity="0.28" style="fill:none;stroke:rgb(232, 160, 160);color:rgb(11, 11, 11);stroke-width:0.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<circle cx="340" cy="295" r="3.5" fill="#C8A8E8" fill-opacity="0.5" stroke="none" style="fill:rgb(200, 168, 232);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="340" cy="295" r="1.5" fill="#FFFFFF" fill-opacity="0.9" stroke="none" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<circle cx="340" cy="75" r="3.5" fill="#C9A84C" fill-opacity="0.9" style="fill:rgb(201, 168, 76);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="105" cy="470" r="3.5" fill="#C9A84C" fill-opacity="0.9" style="fill:rgb(201, 168, 76);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="575" cy="470" r="3.5" fill="#C9A84C" fill-opacity="0.9" style="fill:rgb(201, 168, 76);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<polygon points="340,57 332,74 348,74" fill="#C9A84C" fill-opacity="0.3" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.7" style="fill:rgb(201, 168, 76);stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<polygon points="105,486 97,469 113,469" fill="#C9A84C" fill-opacity="0.3" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.7" style="fill:rgb(201, 168, 76);stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<polygon points="575,486 567,469 583,469" fill="#C9A84C" fill-opacity="0.3" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.7" style="fill:rgb(201, 168, 76);stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+
+<polygon points="200,457 195,447 205,447" fill="none" stroke="#E8A0A0" stroke-width="1.1" stroke-opacity="0.8" style="fill:none;stroke:rgb(232, 160, 160);color:rgb(11, 11, 11);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<polygon points="260,447 255,457 265,457" fill="none" stroke="#B8C8E8" stroke-width="1.1" stroke-opacity="0.8" style="fill:none;stroke:rgb(184, 200, 232);color:rgb(11, 11, 11);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<polygon points="340,457 336,447 340,437 344,447" fill="none" stroke="#D4B0F0" stroke-width="1" stroke-opacity="0.8" style="fill:none;stroke:rgb(212, 176, 240);color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<polygon points="340,437 336,447 340,457 344,447" fill="none" stroke="#C9A84C" stroke-width="1" stroke-opacity="0.6" transform="rotate(180,340,447)" style="fill:none;stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<polygon points="420,457 415,447 425,447" fill="none" stroke="#FFFFFF" stroke-width="0.9" stroke-opacity="0.65" style="fill:none;stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:0.9px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="416" y1="450" x2="424" y2="450" stroke="#FFFFFF" stroke-width="0.8" stroke-opacity="0.65" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(11, 11, 11);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<polygon points="480,447 475,457 485,457" fill="none" stroke="#C9A84C" stroke-width="1.1" stroke-opacity="0.8" style="fill:none;stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="476" y1="450" x2="484" y2="450" stroke="#C9A84C" stroke-width="0.9" stroke-opacity="0.8" style="fill:rgb(0, 0, 0);stroke:rgb(201, 168, 76);color:rgb(11, 11, 11);stroke-width:0.9px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+<text x="340" y="40" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:16px;font-weight:400;text-anchor:middle;dominant-baseline:auto">PORTAL</text>
+<text x="340" y="54" style="fill:rgba(255, 255, 255, 0.4);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">P</text>
+<text x="80" y="512" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:16px;font-weight:400;text-anchor:middle;dominant-baseline:auto">ESPELHO</text>
+<text x="80" y="525" style="fill:rgba(255, 255, 255, 0.4);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">E</text>
+<text x="600" y="512" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:16px;font-weight:400;text-anchor:middle;dominant-baseline:auto">TALISMÃ</text>
+<text x="600" y="525" style="fill:rgba(255, 255, 255, 0.4);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">T</text>
+
+
+<text x="340" y="365" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:11px;font-weight:400;font-style:italic;text-anchor:middle;dominant-baseline:auto">Soul Portrait</text>
+<text x="340" y="380" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:11px;font-weight:400;font-style:italic;text-anchor:middle;dominant-baseline:auto">△</text>
+
+
+<text x="340" y="558" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">P · E · T</text>
+<text x="340" y="571" style="fill:rgba(255, 255, 255, 0.3);stroke:none;color:rgb(11, 11, 11);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:'Cormorant Garamond', serif;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">método</text>
+
+</svg>
+    </div>
     <div class="camadas-grid">
       <div class="camada-card">
         <div style="margin-bottom:0.8rem;"><svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 31 L2 12 A11 11 0 0 1 24 12 L24 31 L2 31" stroke="#BFC9F5" stroke-width="1.4" fill="none"/></svg></div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#E8C97A;margin-bottom:0.3rem;">Portal</h3>
-        <p style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#9A9080;font-style:italic;margin-bottom:0.8rem;">What is hidden</p>
-        <p style="font-size:0.9rem;line-height:1.8;color:#9A9080;">An oracular opening. Through tarot and ritual, the painting becomes a channel of communication with your guides and the divine, raising your field to meet higher frequencies.</p>
-      </div>
-      <div class="camada-card">
-        <div style="font-size:1.8rem;margin-bottom:0.8rem;color:#BFC9F5;">🜂</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#E8C97A;margin-bottom:0.3rem;">Talisman</h3>
-        <p style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#9A9080;font-style:italic;margin-bottom:0.8rem;">What is transforming</p>
-        <p style="font-size:0.9rem;line-height:1.8;color:#9A9080;">A living blessing. The elements, colours and symbols your soul is calling for right now arrive in the piece, a protective object you can keep close as a source of alignment and shelter through the passage.</p>
+        <h3 style="font-family:'Cinzel',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.03em;color:#E8C97A;margin-bottom:0.5rem;" data-i18n="camada1.title">Portal</h3>
+        <p style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#D4CEC3;font-style:italic;margin-bottom:0.8rem;" data-i18n="camada1.label">The entrance</p>
+        <p style="font-size:0.9rem;line-height:1.8;color:#D4CEC3;" data-i18n="camada1.desc">An invitation to come closer to yourself, to self-knowledge and self-love. A door that opens gently, with no answer imposed. The journey begins here.</p>
       </div>
       <div class="camada-card">
         <div style="font-size:1.8rem;margin-bottom:0.8rem;color:#BFC9F5;">◇</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#E8C97A;margin-bottom:0.3rem;">Mirror</h3>
-        <p style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#9A9080;font-style:italic;margin-bottom:0.8rem;">What is seen</p>
-        <p style="font-size:0.9rem;line-height:1.8;color:#9A9080;">A path back to yourself. The soul reading reflects your essence, your archetypes and your current chapter, supporting awakening, alignment and the ongoing journey of self-knowledge.</p>
+        <h3 style="font-family:'Cinzel',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.03em;color:#E8C97A;margin-bottom:0.5rem;" data-i18n="camada2.title">Mirror</h3>
+        <p style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#D4CEC3;font-style:italic;margin-bottom:0.8rem;" data-i18n="camada2.label">To see yourself</p>
+        <p style="font-size:0.9rem;line-height:1.8;color:#D4CEC3;" data-i18n="camada2.desc">A place to look. Here you might recognise something old you had not yet named, and meet something new. What you see in it is yours to keep.</p>
+      </div>
+      <div class="camada-card">
+        <div style="font-size:1.8rem;margin-bottom:0.8rem;color:#BFC9F5;">🜂</div>
+        <h3 style="font-family:'Cinzel',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.03em;color:#E8C97A;margin-bottom:0.5rem;" data-i18n="camada3.title">Talisman</h3>
+        <p style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#D4CEC3;font-style:italic;margin-bottom:0.8rem;" data-i18n="camada3.label">To carry with you</p>
+        <p style="font-size:0.9rem;line-height:1.8;color:#D4CEC3;" data-i18n="camada3.desc">A living talisman. The colours, symbols and attributes that arrived for you stay close, a quiet source of protection, love and confidence for everyday life.</p>
       </div>
     </div>
   </div>
@@ -350,106 +521,110 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
 
 <section id="processo">
   <div class="container">
-    <h2 class="section-title grad-iridescent">How is your artwork born?</h2>
-    <p class="body-text" style="font-style:italic;color:#F2C4C4;">If the portal is where the journey begins, the ritual is the threshold where it takes shape.</p>
-    <p class="body-text">I begin by opening the channel. I sit in ritual with your name and date of birth, draw tarot to meet your spiritual guides, and invite the five elements to speak through the work.</p>
-    <p class="body-text">No photo. No history. Only presence, intention and trust. The colours arrive, the symbols emerge, and the painting takes form over weeks of quiet, intuitive work in London.</p>
-    <p class="body-text">When it is complete, your artwork arrives with a full written soul reading, channelled affirmations and a certificate of authenticity.</p>
+    <h2 class="section-title grad-iridescent" data-i18n="processo.h2">How is your artwork born?</h2>
+    <p class="body-text" style="font-style:italic;color:#F2C4C4;" data-i18n="processo.intro">If the portal is where the journey begins, the ritual is the threshold where it takes shape.</p>
+    <p class="body-text" data-i18n="processo.p1">I begin by opening the channel. I sit in ritual with your name and date of birth, draw tarot to meet your spiritual guides, and invite the five elements to speak through the work.</p>
+    <p class="body-text" data-i18n="processo.p2">No photo. No history. Only presence, intention and trust. The colours arrive, the symbols emerge, and the painting takes form over weeks of quiet, intuitive work in London.</p>
+    <p class="body-text" data-i18n="processo.p3">When it is complete, your artwork arrives with a full written soul reading in PDF, explaining the meanings, colours, forms and channelled messages, along with channelled affirmations and a certificate of authenticity.</p>
+    <p class="body-text" style="font-style:italic;color:#F2C4C4;" data-i18n="processo.p4">The reading is my perspective, what came through for me as I painted. It is an opening, not a verdict. You are welcome to see what I saw, and to keep discovering your own meanings over time. The piece stays with you, and so does the unfolding.</p>
 
     <div style="margin:2.5rem auto;max-width:380px;">
       <img src="16.jpg" alt="Soul Portrait" style="width:100%;display:block;border-radius:4px;border:1px solid rgba(201,168,76,0.2);box-shadow:0 20px 60px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
     </div>
 
     <div style="margin:3rem auto;max-width:650px;background:#1A1A1A;border:1px solid rgba(201,168,76,0.15);border-radius:4px;padding:2.5rem;">
-      <p style="font-size:0.85rem;letter-spacing:0.2em;text-transform:uppercase;color:#C9A84C;margin-bottom:1.5rem;text-align:center;">The ritual</p>
+      <p style="font-size:0.85rem;letter-spacing:0.2em;text-transform:uppercase;color:#C9A84C;margin-bottom:1.5rem;text-align:center;" data-i18n="ritual.label">The ritual</p>
 
       <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;text-align:center;margin-bottom:2rem;">
         <div>
           <div style="font-size:1.6rem;margin-bottom:0.5rem;">🜂</div>
-          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#9A9080;">Fire</div>
-          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">Candle</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#D4CEC3;" data-i18n="el.fire">Fire</div>
+          <div style="font-size:0.65rem;color:rgba(212,206,195,0.8);margin-top:0.3rem;" data-i18n="el.fire.sub">Candle</div>
         </div>
         <div>
           <div style="font-size:1.6rem;margin-bottom:0.5rem;">🜄</div>
-          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#9A9080;">Water</div>
-          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">Paint medium</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#D4CEC3;" data-i18n="el.water">Water</div>
+          <div style="font-size:0.65rem;color:rgba(212,206,195,0.8);margin-top:0.3rem;" data-i18n="el.water.sub">Paint medium</div>
         </div>
         <div>
           <div style="font-size:1.6rem;margin-bottom:0.5rem;">🜃</div>
-          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#9A9080;">Earth</div>
-          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">Crystals</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#D4CEC3;" data-i18n="el.earth">Earth</div>
+          <div style="font-size:0.65rem;color:rgba(212,206,195,0.8);margin-top:0.3rem;" data-i18n="el.earth.sub">Crystals</div>
         </div>
         <div>
           <div style="font-size:1.6rem;margin-bottom:0.5rem;">🜁</div>
-          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#9A9080;">Air</div>
-          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">Sage and smoke</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#D4CEC3;" data-i18n="el.air">Air</div>
+          <div style="font-size:0.65rem;color:rgba(212,206,195,0.8);margin-top:0.3rem;" data-i18n="el.air.sub">Sage and smoke</div>
         </div>
         <div>
           <div style="font-size:1.6rem;margin-bottom:0.5rem;">✦</div>
-          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#9A9080;">Soul</div>
-          <div style="font-size:0.65rem;color:rgba(154,144,128,0.6);margin-top:0.3rem;">The channel</div>
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#D4CEC3;" data-i18n="el.soul">Soul</div>
+          <div style="font-size:0.65rem;color:rgba(212,206,195,0.8);margin-top:0.3rem;" data-i18n="el.soul.sub">The channel</div>
         </div>
       </div>
 
-      <p style="font-size:0.9rem;line-height:1.9;color:#9A9080;text-align:center;border-top:1px solid rgba(201,168,76,0.1);padding-top:1.8rem;">Before the first brushstroke, the space is prepared. A candle is lit for intention. White sage and incense clear the air. Crystals are placed to anchor the energy. Water is invited into the work as a living medium.</p>
-      <p style="font-size:0.9rem;line-height:1.9;color:#9A9080;text-align:center;margin-top:1rem;">Then the souls arrive. Mine as the channel, yours as the source, your guides and mine meeting in the space between, working in harmony so that what lands on the paper is not invented but received. My guides, The Tower, The Devil and Judgement, hold the space: transformation, shadow and the call of the soul. Powerful presences that know exactly what needs to come through.</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;font-weight:300;color:#F2C4C4;text-align:center;margin-top:1.5rem;">"The painting is not made. It is allowed."</p>
+      <p style="font-size:0.9rem;line-height:1.9;color:#D4CEC3;text-align:center;border-top:1px solid rgba(201,168,76,0.1);padding-top:1.8rem;" data-i18n="ritual.p1">Before the first brushstroke, the space is prepared. A candle is lit for intention. White sage and incense clear the air. Crystals are placed to anchor the energy. Water is invited into the work as a living medium.</p>
+      <p style="font-size:0.9rem;line-height:1.9;color:#D4CEC3;text-align:center;margin-top:1rem;" data-i18n="ritual.p2">Then the souls arrive. Mine as the channel, yours as the source. My three guides hold the space: they protect the field, clear what is heavy, keep only what is light, and steady the channel, so that what lands on the paper is not invented but received. The Tower, The Devil and Judgement: transformation, shadow and the call of the soul.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;font-weight:300;color:#F2C4C4;text-align:center;margin-top:1.5rem;" data-i18n="ritual.quote">"The painting is not made. It is allowed."</p>
     </div>
 
     <div style="max-width:650px;margin:2.5rem auto 0;text-align:center;padding:1.5rem;border-top:1px solid rgba(201,168,76,0.1);">
-      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;">A note on spiritual ethics</p>
-      <p style="font-size:0.9rem;line-height:1.8;color:#9A9080;">I believe every serious spiritual practice requires conscious awareness. I do not enter anyone's energetic field without their permission. When you commission a Soul Portrait, your intention and consent are the foundation of everything that follows.</p>
+      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;" data-i18n="ethics.label">A note on spiritual ethics</p>
+      <p style="font-size:0.9rem;line-height:1.8;color:#D4CEC3;" data-i18n="ethics.p">I believe every serious spiritual practice requires conscious awareness. I do not enter anyone's energetic field without their permission. When you commission a Soul Portrait, your intention and consent are the foundation of everything that follows.</p>
     </div>
-    <p class="destaque grad" style="text-align:center;margin-top:2.5rem;">"Not decorative art. It is a transmission."</p>
+    <p class="destaque grad" style="text-align:center;margin-top:2.5rem;" data-i18n="processo.destaque">"More than a painting on the wall. A quiet companion for the journey."</p>
   </div>
 </section>
 
 <div id="urgencia">
-  <p>Each artwork receives weeks of full spiritual attention. I accept only a few commissions each month. <strong>If something in you is saying yes right now, trust that.</strong></p>
+  <p data-i18n="urgencia.p">Each artwork receives weeks of full spiritual attention. I accept only a few commissions each month. <strong>If something in you is saying yes right now, trust that.</strong></p>
 </div>
 
 <section id="produtos">
   <div class="container">
-    <h2 class="section-title grad-iridescent">The offerings</h2>
-    <p class="section-sub">Each piece is channelled with care, ritual and full spiritual presence.</p>
+    <h2 class="section-title grad-iridescent" data-i18n="produtos.h2">The offerings</h2>
+    <p class="section-sub" data-i18n="produtos.sub">Each piece is channelled with care, ritual and full spiritual presence.</p>
 
     <div class="produtos-grid">
       <div class="produto-card destaque-card">
-        <span class="produto-tag">Main offering</span>
+        <span class="produto-tag" data-i18n="prod1.tag">Main offering</span>
         <h3 class="grad-iridescent">Soul Portrait</h3>
-        <p class="produto-desc">A watercolour portal channelled through tarot, the five elements and your spiritual guides. Your personal talisman of alignment and protection, and a mirror of your soul's current chapter. Only your name and date of birth are needed.</p>
+        <p class="produto-desc" data-i18n="prod1.desc">A hand-channelled watercolour, created only from your name and date of birth. It carries three dimensions at once: a portal to enter, a mirror to see yourself in, and a talisman to keep close. I bring the image, the meaning you find in it is yours.</p>
         <ul class="lista-produto">
-          <li>Original watercolour painting 24x32cm, your personal talisman</li>
-          <li>Tarot and oracular reading to open communication with your guides</li>
-          <li>The elements, colours and symbols your soul is calling for now</li>
-          <li>Complete soul reading in PDF, for alignment and awakening</li>
-          <li>10 personal channelled affirmations</li>
-          <li>Certificate of authenticity</li>
-          <li>Shipping included worldwide</li>
+          <li data-i18n="prod1.li1">Original watercolour painting 24x32cm, your personal talisman</li>
+          <li data-i18n="prod1.li2">Tarot and oracular reading to open communication with your guides</li>
+          <li data-i18n="prod1.li3">The elements, colours and symbols your soul is calling for now</li>
+          <li data-i18n="prod1.li4">Complete soul reading in PDF, for alignment and awakening</li>
+          <li data-i18n="prod1.li5">10 personal channelled affirmations</li>
+          <li data-i18n="prod1.li6">Certificate of authenticity</li>
+          <li data-i18n="prod1.li7">Shipping included worldwide</li>
         </ul>
-        <p class="preco grad">£333</p>
-        <p class="preco-brazil">For clients in Brazil: R$1.333</p>
-        <p class="preco-sub">Instalment plans available · Ask via the form</p>
-        <a href="https://tally.so/r/OD0b8A" class="btn-whatsapp">Commission yours</a>
+        <div class="preco-grid">
+          <div class="preco-row"><span class="preco-region" data-i18n="prod1.regbr">Brazil</span><span class="preco-val grad">R$1.333</span></div>
+          <div class="preco-row"><span class="preco-region" data-i18n="prod1.reguk">UK</span><span class="preco-val grad">£333</span></div>
+          <div class="preco-row"><span class="preco-region" data-i18n="prod1.regeu">Europe</span><span class="preco-val grad">€333</span></div>
+        </div>
+        <p class="preco-sub" data-i18n="prod1.instal">Instalment plans available · Ask via the form</p>
+        <a href="https://tally.so/r/OD0b8A" class="btn-whatsapp cta-js" data-i18n="prod1.cta">Commission yours</a>
       </div>
 
       <div class="produto-card">
-        <span class="produto-tag">By commission</span>
-        <h3 class="grad-iridescent">Spiritual Mentor Portrait</h3>
-        <p class="produto-desc">A channelled painting of your spiritual guide or mentor energy, called in through ritual and tarot. A sacred piece to honour the invisible presence walking beside you.</p>
+        <span class="produto-tag" data-i18n="prod2.tag">By commission</span>
+        <h3 class="grad-iridescent" data-i18n="prod2.title">Spiritual Mentor Portrait</h3>
+        <p class="produto-desc" data-i18n="prod2.desc">A channelled painting of a spiritual guide or mentor energy that walks with you, called in through ritual and tarot. A way to honour a presence you already feel, given form.</p>
         <ul class="lista-produto">
-          <li>Original watercolour painting 24x32cm</li>
-          <li>Channelled through tarot and ritual</li>
-          <li>Written message from your guide</li>
-          <li>Certificate of authenticity</li>
-          <li>Shipping included worldwide</li>
+          <li data-i18n="prod2.li1">Original watercolour painting 24x32cm</li>
+          <li data-i18n="prod2.li2">Channelled through tarot and ritual</li>
+          <li data-i18n="prod2.li3">Written message from your guide</li>
+          <li data-i18n="prod2.li4">Certificate of authenticity</li>
+          <li data-i18n="prod2.li5">Shipping included worldwide</li>
         </ul>
         <br>
-        <a href="https://tally.so/r/OD0b8A" class="btn-outline">Enquire via Tally</a>
+        <a href="https://tally.so/r/OD0b8A" class="btn-outline cta-js" data-i18n="prod2.cta">Enquire via Tally</a>
       </div>
     </div>
 
-    <p class="originais-note">Original paintings with specific energies are occasionally available for sale via <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a>. Follow to be notified.</p>
+    <p class="originais-note" data-i18n="originais.note">Original paintings with specific energies are occasionally available for sale via <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a>. Follow to be notified.</p>
   </div>
 </section>
 
@@ -459,19 +634,19 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
       <div class="foto-frame"><img src="pam.jpg" alt="Pam Leavey" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<span>Foto da Pam</span>'"></div>
     </div>
     <div class="sobre-text">
-      <p style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;">The Artist</p>
-      <h2 class="section-title" style="margin-bottom:1.5rem;">I am Pam.</h2>
-      <p>Soul Artist, medium and intuitive painter based in London. Born in Brazil, living between two worlds, I have always been drawn to what lies beneath the surface of things.</p>
-      <p>I spent 11 years as a tattoo artist, working intimately with people and learning how much the soul carries in silence. That work taught me to listen with my hands, to feel what someone could not yet put into words, and to trust what arrived through the creative act.</p>
-      <p>A background in architecture gave me an eye for form, structure and symbol. An encounter with Jungian depth psychology gave me the language for what I had always been sensing. And a lifelong spiritual practice, rooted in mediumship, tarot and Afro-Brazilian tradition, gave me the channel through which it all flows.</p>
-      <p>Today I paint souls. I am a Cancerian, Kin 243 Blue Solar Night of the Eagle Wavespell. I work with tarot, crystals, candles, white sage and water as ritual tools to open the channel before each piece begins. My guides, The Tower, The Devil and Judgement, hold the space: transformation, shadow and the call of the soul.</p>
-      <em class="grad">I do not paint what I see. I paint what arrives.</em>
+      <p style="font-size:0.78rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:#F4CBCB;margin-bottom:1rem;text-shadow:0 0 18px rgba(242,196,196,0.45);" data-i18n="sobre.label">The Artist</p>
+      <h2 class="section-title" style="margin-bottom:1.5rem;" data-i18n="sobre.h2">I am Pam.</h2>
+      <p data-i18n="sobre.p1">Soul Artist, medium and intuitive painter based in London. Born in Brazil, living between two worlds, I have always been drawn to what lies beneath the surface of things.</p>
+      <p data-i18n="sobre.p2">I spent 11 years as a tattoo artist, working intimately with people and learning how much the soul carries in silence. That work taught me to listen with my hands, to feel what someone could not yet put into words, and to trust what arrived through the creative act.</p>
+      <p data-i18n="sobre.p3">A background in architecture gave me an eye for form, structure and symbol. An encounter with Jungian depth psychology gave me the language for what I had always been sensing. And a lifelong spiritual practice, rooted in mediumship, tarot and Afro-Brazilian tradition, gave me the channel through which it all flows.</p>
+      <p data-i18n="sobre.p4">Today I paint souls. I am a Cancerian, Kin 243 Blue Solar Night of the Eagle Wavespell. I work with tarot, crystals, candles, white sage and water as ritual tools to open the channel before each piece begins. My guides, The Tower, The Devil and Judgement, hold the space: transformation, shadow and the call of the soul.</p>
+      <em class="grad" data-i18n="sobre.em">I do not paint what I see. I paint what arrives.</em>
       <div class="sobre-badges">
-        <span class="badge">Medium</span>
-        <span class="badge">Soul Artist</span>
-        <span class="badge">Cancerian</span>
+        <span class="badge" data-i18n="badge.medium">Medium</span>
+        <span class="badge" data-i18n="badge.artist">Soul Artist</span>
+        <span class="badge" data-i18n="badge.cancer">Cancerian</span>
         <span class="badge">Kin 243</span>
-        <span class="badge">London</span>
+        <span class="badge" data-i18n="badge.london">London</span>
       </div>
     </div>
   </div>
@@ -479,50 +654,50 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
 
 <section id="faq">
   <div class="container" style="max-width:700px;">
-    <h2 class="section-title grad-iridescent">Frequently asked questions.</h2>
+    <h2 class="section-title grad-iridescent" data-i18n="faq.h2">Frequently asked questions.</h2>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Do you need a photo of me? <span class="icon">+</span></button>
-      <div class="faq-a"><p>No. I work only with your name and date of birth. What comes through is not about your appearance, it is about what your soul is carrying.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q1">Do you need a photo of me?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a1"><p>No. I work only with your name and date of birth. What comes through is not about your appearance, it is about what your soul is carrying.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What does the tarot reading involve? <span class="icon">+</span></button>
-      <div class="faq-a"><p>Before I begin painting, I draw tarot to connect with your spiritual guides and understand the energetic field I will be working with. The cards help open the channel and guide the symbols, colours and forms that emerge in the painting. You receive a note about what came through.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q2">What does the tarot reading involve?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a2"><p>Before I begin painting, I draw tarot to connect with your spiritual guides and understand the energetic field I will be working with. The cards help open the channel and guide the symbols, colours and forms that emerge in the painting. You receive a note about what came through.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Do I need to know about spirituality or tarot? <span class="icon">+</span></button>
-      <div class="faq-a"><p>Not at all. The soul reading that accompanies your painting explains everything in a warm, accessible way. You only need to be open to receiving.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q3">Do I need to know about spirituality or tarot?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a3"><p>Not at all. The soul reading that accompanies your painting explains everything in a warm, accessible way. You only need to be open to receiving.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">How does shipping work? <span class="icon">+</span></button>
-      <div class="faq-a"><p>The painting is shipped physically, tracked, anywhere in the world. Shipping is included in the price. For the UK and Europe the timeframe is 1 to 2 weeks. For Brazil, shipping can take up to 4 additional weeks after dispatch.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q4">How does shipping work?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a4"><p>The painting is shipped physically, tracked, anywhere in the world. Shipping is included in the price. For the UK and Europe the timeframe is 1 to 2 weeks. For Brazil, shipping can take up to 4 additional weeks after dispatch.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">How long does it take? <span class="icon">+</span></button>
-      <div class="faq-a"><p>2 to 4 weeks from start to shipping. Each piece is made with full care and ritual intention.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q5">How long does it take?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a5"><p>2 to 4 weeks from start to shipping. Each piece is made with full care and ritual intention.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Can I pay in instalments? <span class="icon">+</span></button>
-      <div class="faq-a"><p>Fill in the enquiry form and mention it, I will get back to you with the options available for your country.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q6">Can I pay in instalments?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a6"><p>Fill in the enquiry form and mention it, I will get back to you with the options available for your country.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Can I commission a Soul Portrait as a gift? <span class="icon">+</span></button>
-      <div class="faq-a"><p>Yes, and it makes a deeply meaningful one. However, because I work with the recipient's name and date of birth, it cannot be a complete surprise. The person receiving it will need to know it is coming so they can share those details. This is also a matter of spiritual ethics: I do not enter anyone's energetic field without their conscious permission. Once the painting arrives, the full depth of it will still be a beautiful and unexpected revelation. Just mention it is a gift when you fill in the form.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q7">Can I commission a Soul Portrait as a gift?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a7"><p>Yes, and it makes a deeply meaningful one. However, because I work with the recipient's name and date of birth, it cannot be a complete surprise. The person receiving it will need to know it is coming so they can share those details. This is also a matter of spiritual ethics: I do not enter anyone's energetic field without their conscious permission. Once the painting arrives, the full depth of it will still be a beautiful and unexpected revelation. Just mention it is a gift when you fill in the form.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Will the painting look like me? <span class="icon">+</span></button>
-      <div class="faq-a"><p>It will not be a likeness of your face. It is a portrait of your soul, the symbols, colours, energies and guides that are present in your field. Many people find it deeply recognisable in ways that go beyond appearance.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q8">Will the painting look like me?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a8"><p>It will not be a likeness of your face. It is a portrait of your soul, the symbols, colours, energies and guides that are present in your field. Many people find it deeply recognisable in ways that go beyond appearance.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What if I do not connect with the painting? <span class="icon">+</span></button>
-      <div class="faq-a"><p>In my experience, the connection often arrives in layers. Some people feel it immediately, others need a few days of sitting with the work before it opens. The soul reading helps bridge that space. If something specific feels unclear, I am always here to talk it through.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q9">What if I do not connect with the painting?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a9"><p>In my experience, the connection often arrives in layers. Some people feel it immediately, others need a few days of sitting with the work before it opens. The soul reading helps bridge that space. If something specific feels unclear, I am always here to talk it through.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">How do I care for the painting? <span class="icon">+</span></button>
-      <div class="faq-a"><p>Your painting arrives with full caring instructions. I recommend framing it behind glass to protect the watercolour, keeping it away from direct sunlight and humidity. A 40x50cm frame works beautifully for the 24x32cm painting, leaving an elegant border around the work.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q10">How do I care for the painting?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a10"><p>Your painting arrives with full caring instructions. I recommend framing it behind glass to protect the watercolour, keeping it away from direct sunlight and humidity. A 40x50cm frame works beautifully for the 24x32cm painting, leaving an elegant border around the work.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Can I choose the colours or style? <span class="icon">+</span></button>
-      <div class="faq-a"><p>The process is fully intuitive and channelled, so I do not work with requests for specific colours or styles. What arrives through the painting is what your soul and guides bring forward. Trusting that is part of the magic of the work.</p>
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q11">Can I choose the colours or style?</span> <span class="icon">+</span></button>
+      <div class="faq-a" data-i18n="faq.a11"><p>The process is fully intuitive and channelled, so I do not work with requests for specific colours or styles. What arrives through the painting is what your soul and guides bring forward. Trusting that is part of the magic of the work.</p>
       <p style="margin-top:0.8rem;">That said, if you already have a connection with a spiritual mentor or guide, whether through meditation, visualisation or your own practice, and you know their name, energy or colours, you are very welcome to share that with me. It becomes part of the channelling. If you prefer to leave it completely open and let whatever needs to arrive come through, that is equally beautiful. Both paths are honoured.</p></div>
     </div>
   </div>
@@ -530,8 +705,8 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
 
 <section id="depoimentos">
   <div class="container">
-    <h2 class="section-title grad-iridescent">Voices of the Soul</h2>
-    <p class="sub-title">Words from those who have received their artwork.</p>
+    <h2 class="section-title grad-iridescent" data-i18n="depo.h2">Voices of the Soul</h2>
+    <p class="sub-title" data-i18n="depo.sub">Words from those who have received their artwork.</p>
     <div style="display:flex;justify-content:center;gap:0.8rem;margin:2rem 0 3rem;flex-wrap:wrap;">
       <img src="6.jpg" alt="Soul Portrait" style="width:85px;height:105px;object-fit:cover;border-radius:4px;border:1px solid rgba(201,168,76,0.2);" onerror="this.style.display='none'">
       <img src="9.jpg" alt="Soul Portrait" style="width:85px;height:105px;object-fit:cover;border-radius:4px;border:1px solid rgba(201,168,76,0.2);" onerror="this.style.display='none'">
@@ -541,43 +716,43 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
     <div class="depo-grid">
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text">"The painting is beautiful. These are colours I have been feeling the need to vibrate with more. The orange in creativity, the fire that is action. The movement the image brings."</p>
+        <p class="depo-text" data-i18n="depo.t1">"The painting is beautiful. These are colours I have been feeling the need to vibrate with more. The orange in creativity, the fire that is action. The movement the image brings."</p>
         <p class="depo-author">Carol Camargo</p>
         <p class="depo-handle"><a href="https://www.instagram.com/eu_carolcamargo/" target="_blank">@eu_carolcamargo</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text">"I am still lost for words to explain what it was like to receive this art. At many moments it felt like I was looking at parts of myself I had not been able to fully access yet. I felt very seen, welcomed and even braver with myself."</p>
+        <p class="depo-text" data-i18n="depo.t2">"I am still lost for words to explain what it was like to receive this art. At many moments it felt like I was looking at parts of myself I had not been able to fully access yet. I felt very seen, welcomed and even braver with myself."</p>
         <p class="depo-author">Amanda</p>
         <p class="depo-handle"><a href="https://www.instagram.com/holisticaimigrante/" target="_blank">@holisticaimigrante</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text">"I found your work very clear and easy to understand, but I also knew there was more than it seemed. I saw myself in every line and every stroke. The art describes exactly what I am going through."</p>
+        <p class="depo-text" data-i18n="depo.t3">"I found your work very clear and easy to understand, but I also knew there was more than it seemed. I saw myself in every line and every stroke. The art describes exactly what I am going through."</p>
         <p class="depo-author">Kel Balduino</p>
         <p class="depo-handle"><a href="https://www.instagram.com/kelbalduinocurandeira/" target="_blank">@kelbalduinocurandeira</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text">"When I received the art, it was as if something deeper was being reflected back to me. A sense of clarity and connection to myself. Like parts of me I did not fully acknowledge were suddenly visible and valid."</p>
+        <p class="depo-text" data-i18n="depo.t4">"When I received the art, it was as if something deeper was being reflected back to me. A sense of clarity and connection to myself. Like parts of me I did not fully acknowledge were suddenly visible and valid."</p>
         <p class="depo-author">Vaneska Dantas</p>
         <p class="depo-handle"><a href="https://www.instagram.com/vanidantas5/" target="_blank">@vanidantas5</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text">"You came with a beautiful mission full of purpose. It is incredible how everything makes sense. I want to spread this beautiful and sacred work of light."</p>
+        <p class="depo-text" data-i18n="depo.t5">"You came with a beautiful mission full of purpose. It is incredible how everything makes sense. I want to spread this beautiful and sacred work of light."</p>
         <p class="depo-author">Dra. Karina Nabuco</p>
         <p class="depo-handle"><a href="https://www.instagram.com/karina_nabuco25/" target="_blank">@karina_nabuco25</a></p>
       </div>
       <div class="depo-card">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text">"I am still processing what was created for me. These last few days I keep finding myself going back to it, rereading the affirmations and just sitting with everything I felt while receiving it."</p>
+        <p class="depo-text" data-i18n="depo.t6">"I am still processing what was created for me. These last few days I keep finding myself going back to it, rereading the affirmations and just sitting with everything I felt while receiving it."</p>
         <p class="depo-author">Kasha</p>
         <p class="depo-handle"><a href="https://www.instagram.com/kstasha_/" target="_blank">@kstasha_</a></p>
       </div>
       <div class="depo-card" style="grid-column:2;">
         <p class="depo-stars">★★★★★</p>
-        <p class="depo-text">"I felt seen and more aligned with my true self. I can see my path ahead more clearly thanks to the channelled message."</p>
+        <p class="depo-text" data-i18n="depo.t7">"I felt seen and more aligned with my true self. I can see my path ahead more clearly thanks to the channelled message."</p>
         <p class="depo-author">Eduardo Nicolodi</p>
         <p class="depo-handle"><a href="https://www.instagram.com/eduinfinitando/" target="_blank">@eduinfinitando</a></p>
       </div>
@@ -587,33 +762,204 @@ footer { background: #111111; border-top: 1px solid rgba(201,168,76,0.1); paddin
 
 <section id="cta-final">
   <div class="container">
-    <h2 class="section-title grad-iridescent">Your soul is waiting.</h2>
-    <p class="sub">If something in you said yes while reading this, the journey has already begun. The rest simply continues it.</p>
-    <p class="sub2">"Each piece arrives exactly as it needs to. The guides know what they are doing."</p>
-    <a href="https://tally.so/r/OD0b8A" class="btn-primary" style="font-size:0.9rem;padding:1.2rem 3rem;">Begin your journey</a>
+    <h2 class="section-title grad-iridescent" data-i18n="ctafinal.h2">The portal is open.</h2>
+    <p class="sub" data-i18n="ctafinal.sub">If something in you is curious, that is enough. You bring your name and date of birth, I take care of the rest.</p>
+    <p class="sub2" data-i18n="ctafinal.sub2">"Each piece arrives in its own time, carrying what it needs to carry."</p>
+    <a href="https://tally.so/r/OD0b8A" class="btn-primary cta-js" style="font-size:0.9rem;padding:1.2rem 3rem;" data-i18n="ctafinal.cta">Begin your journey</a>
   </div>
 </section>
 
 <footer>
   <p class="footer-name grad">Pam Leavey</p>
-  <p class="footer-sub">Soul Artist · London</p>
+  <p class="footer-sub" data-i18n="footer.sub">Soul Artist · London</p>
   <div class="footer-social">
-    <a href="https://www.instagram.com/pamleavey.artz/" target="_blank" title="Instagram">IG</a>
-    <a href="https://youtube.com/@pleaveysoulart" target="_blank" title="YouTube">YT</a>
-    <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank" title="WhatsApp">WA</a>
-    <a href="mailto:hello@pamleavey.com" title="Email">✉</a>
+    <a href="https://www.instagram.com/pamleavey.artz/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://youtube.com/@pleaveysoulart" target="_blank" title="YouTube" class="yt-js"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+    <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6 0a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.3 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5s0-.4 0-.5l-.7-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A2.8 2.8 0 0 0 6.7 11a5 5 0 0 0 1 2.6 11.3 11.3 0 0 0 4.4 3.9c2 .8 2 .5 2.4.5a2.5 2.5 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg></a>
+    <a href="mailto:hello@pamleavey.com" title="Email"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M3 6l9 7 9-7"/></svg></a>
   </div>
   <p class="footer-email">hello@pamleavey.com</p>
-  <p class="footer-pt-note">🌸 Comunidade brasileira: para encomendar sua arte, me manda mensagem no <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a> ou no <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank">WhatsApp</a>.</p>
+  <p class="footer-pt-note" data-i18n="footer.ptnote">🌸 Brazilian community, to order your artwork message me on <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a> or <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank">WhatsApp</a>.</p>
   <hr class="footer-divider">
   <p style="margin-bottom:1rem;">
-  <a href="/privacy.html" style="font-size:0.75rem;color:#9A9080;text-decoration:none;margin:0 1rem;" onmouseover="this.style.color='#E8C97A'" onmouseout="this.style.color='#9A9080'">Privacy Policy</a>
-  <a href="/terms.html" style="font-size:0.75rem;color:#9A9080;text-decoration:none;margin:0 1rem;" onmouseover="this.style.color='#E8C97A'" onmouseout="this.style.color='#9A9080'">Terms of Service</a>
+  <a href="/privacy.html" style="font-size:0.75rem;color:#D4CEC3;text-decoration:none;margin:0 1rem;" onmouseover="this.style.color='#E8C97A'" onmouseout="this.style.color='#D4CEC3'" data-i18n="footer.privacy">Privacy Policy</a>
+  <a href="/terms.html" style="font-size:0.75rem;color:#D4CEC3;text-decoration:none;margin:0 1rem;" onmouseover="this.style.color='#E8C97A'" onmouseout="this.style.color='#D4CEC3'" data-i18n="footer.terms">Terms of Service</a>
 </p>
 <p class="footer-copy">© 2026 Pam Leavey. All rights reserved.</p>
 </footer>
 
 <script>
+const TR = {
+  pt: {
+    "nav.cta": `Encomende a sua`,
+    "disclaimer": `🌸 Para encomendar sua arte, é só me mandar uma mensagem no <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a> ou no <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank">WhatsApp</a>.`,
+    "hero.eyebrow": `Portal · Espelho · Talismã`,
+    "hero.h1": `<span>E se eu criasse</span><em class="grad-iridescent">uma arte portal só pra você?</em>`,
+    "hero.sub": `Uma aquarela canalizada à mão, criada só com o seu nome e a sua data de nascimento. Um portal único para a sua essência: um lugar para entrar, se ver e levar com você.`,
+    "hero.cta": `Comece sua jornada`,
+    "manifesto.label": `O método PET`,
+    "manifesto.h2": `<span>Um <strong style="color:#E8C97A;font-weight:600;">portal</strong> para entrar.</span><br><span>Um <strong style="color:#BFE3FF;font-weight:600;">espelho</strong> para se ver.</span><br><span>Um <strong style="color:#F2C4C4;font-weight:600;">talismã</strong> para levar.</span>`,
+    "manifesto.p1": `Cada Soul Portrait carrega essas três dimensões ao mesmo tempo. Não é um retrato do seu rosto e não pretende dizer quem você é. É uma imagem que chega pela canalização e se oferece a você, para que você encontre nela o que é seu.`,
+    "manifesto.p2": `Muita gente fica com a sua arte e encontra mais de algo que estava precisando: amor, esperança, confiança, uma sensação tranquila do próprio poder. Não são promessas grandiosas, são pequenas aberturas para o dia a dia.`,
+    "portal.h2": `Você já sentiu isso?`,
+    "portal.p1": `Talvez uma curiosidade silenciosa sobre você mesma. Uma sensação de que existe mais por baixo, algo que você ainda não colocou em palavras nem deu forma.`,
+    "portal.p2": `Você talvez sinta em certas músicas, certos lugares, certos momentos de quietude. <strong>Se você está curiosa, isso já basta para começar.</strong>`,
+    "portal.p3": `É aqui que um Soul Portrait começa. Não com respostas, mas com <strong style="color:#F2C4C4;font-weight:600;">um convite para olhar para si.</strong>`,
+    "impacto.h2": `<span class="grad">Eu não vou te dizer quem você é.</span><br><span>Vou te entregar um espelho, e deixar você olhar.</span>`,
+    "impacto.p1": `Através da canalização, do tarô e dos elementos, eu traduzo o que chega em cor, símbolo e forma. Eu não interpreto a sua vida por você. Eu trago uma imagem, e o sentido que você encontra nela é seu.`,
+    "impacto.p2": `Algumas pessoas se reconhecem na hora. Outras ficam com a arte por dias até algo se abrir. Os dois jeitos são bem-vindos.`,
+    "camadas.h2": `Portal. Espelho. Talismã.`,
+    "camadas.intro": `Cada Soul Portrait carrega três dimensões ao mesmo tempo. Você entra, você se vê e você leva com você. É o método PET.`,
+    "camada1.title": `Portal`,
+    "camada1.label": `A entrada`,
+    "camada1.desc": `Um convite para chegar mais perto de você, do autoconhecimento e do autoamor. Uma porta que se abre com delicadeza, sem nenhuma resposta imposta. A jornada começa aqui.`,
+    "camada2.title": `Espelho`,
+    "camada2.label": `Para se ver`,
+    "camada2.desc": `Um lugar para olhar. Aqui você talvez reconheça algo antigo que ainda não tinha nomeado, e encontre algo novo. O que você vê nele é seu para guardar.`,
+    "camada3.title": `Talismã`,
+    "camada3.label": `Para levar com você`,
+    "camada3.desc": `Um talismã vivo. As cores, os símbolos e os atributos que chegaram para você ficam por perto, uma fonte tranquila de proteção, amor e confiança para o dia a dia.`,
+    "processo.h2": `Como sua arte nasce?`,
+    "processo.intro": `Se o portal é onde a jornada começa, o ritual é o limiar onde ela ganha forma.`,
+    "processo.p1": `Eu começo abrindo o canal. Me sento em ritual com seu nome e data de nascimento, tiro o tarô para encontrar seus guias espirituais e convido os cinco elementos a falar através da obra.`,
+    "processo.p2": `Sem foto. Sem histórico. Apenas presença, intenção e confiança. As cores chegam, os símbolos emergem e a pintura ganha forma ao longo de semanas de trabalho quieto e intuitivo em Londres.`,
+    "processo.p3": `Quando está pronta, sua arte chega com uma leitura da alma completa em PDF, explicando os significados, as cores, as formas e as mensagens canalizadas, junto com afirmações canalizadas e um certificado de autenticidade.`,
+    "processo.p4": `A leitura é a minha perspectiva, o que chegou para mim enquanto eu pintava. É uma abertura, não um veredito. Você é livre para ver o que eu vi, e para continuar descobrindo os seus próprios significados com o tempo. A arte fica com você, e o desdobramento também.`,
+    "ritual.label": `O ritual`,
+    "el.fire": `Fogo`,
+    "el.fire.sub": `Vela`,
+    "el.water": `Água`,
+    "el.water.sub": `Meio da tinta`,
+    "el.earth": `Terra`,
+    "el.earth.sub": `Cristais`,
+    "el.air": `Ar`,
+    "el.air.sub": `Sálvia e fumaça`,
+    "el.soul": `Alma`,
+    "el.soul.sub": `O canal`,
+    "ritual.p1": `Antes da primeira pincelada, o espaço é preparado. Uma vela é acesa pela intenção. Sálvia branca e incenso limpam o ar. Cristais são colocados para ancorar a energia. A água é convidada para a obra como um meio vivo.`,
+    "ritual.p2": `Então as almas chegam. A minha como canal, a sua como fonte. Meus três guias sustentam o espaço: eles protegem o campo, limpam o que está pesado, deixam só o que é leve e mantêm o canal firme, para que o que pousa no papel não seja inventado, e sim recebido. A Torre, O Diabo e O Julgamento: transformação, sombra e o chamado da alma.`,
+    "ritual.quote": `"A pintura não é feita. Ela é permitida."`,
+    "ethics.label": `Uma palavra sobre ética espiritual`,
+    "ethics.p": `Acredito que toda prática espiritual séria exige consciência. Eu não entro no campo energético de ninguém sem permissão. Quando você encomenda um Retrato da Alma, sua intenção e seu consentimento são a base de tudo o que vem depois.`,
+    "processo.destaque": `"Mais que um quadro na parede. Uma companhia tranquila para a jornada."`,
+    "urgencia.p": `Cada arte recebe semanas de atenção espiritual completa. Eu aceito apenas algumas encomendas por mês. <strong>Se algo em você está dizendo sim agora, confie nisso.</strong>`,
+    "produtos.h2": `As ofertas`,
+    "produtos.sub": `Cada arte é canalizada com cuidado, ritual e presença espiritual completa.`,
+    "prod1.tag": `Oferta principal`,
+    "prod1.desc": `Uma aquarela canalizada à mão, criada só com o seu nome e a sua data de nascimento. Ela carrega três dimensões ao mesmo tempo: um portal para entrar, um espelho para se ver e um talismã para manter por perto. Eu trago a imagem, o sentido que você encontra nela é seu.`,
+    "prod1.li1": `Pintura original em aquarela 24x32cm, seu talismã pessoal`,
+    "prod1.li2": `Leitura de tarô e oracular para abrir a comunicação com seus guias`,
+    "prod1.li3": `Os elementos, cores e símbolos que sua alma está pedindo agora`,
+    "prod1.li4": `Leitura da alma completa em PDF, para alinhamento e despertar`,
+    "prod1.li5": `10 afirmações pessoais canalizadas`,
+    "prod1.li6": `Certificado de autenticidade`,
+    "prod1.li7": `Envio incluído para o mundo todo`,
+    "prod1.regbr": `Brasil`,
+    "prod1.reguk": `Reino Unido`,
+    "prod1.regeu": `Europa`,
+    "prod1.instal": `Parcelamento disponível · Pergunte no WhatsApp`,
+    "prod1.cta": `Encomende o seu`,
+    "prod2.tag": `Sob encomenda`,
+    "prod2.title": `Retrato de Mentor Espiritual`,
+    "prod2.desc": `Uma pintura canalizada de um guia ou da energia de um mentor espiritual que caminha com você, chamada através do ritual e do tarô. Um jeito de honrar uma presença que você já sente, ganhando forma.`,
+    "prod2.li1": `Pintura original em aquarela 24x32cm`,
+    "prod2.li2": `Canalizada através do tarô e do ritual`,
+    "prod2.li3": `Mensagem escrita do seu guia`,
+    "prod2.li4": `Certificado de autenticidade`,
+    "prod2.li5": `Envio incluído para o mundo todo`,
+    "prod2.cta": `Encomende pelo WhatsApp`,
+    "originais.note": `Pinturas originais com energias específicas ficam à venda de vez em quando pelo <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a>. Me siga para ser avisada.`,
+    "sobre.label": `A Artista`,
+    "sobre.h2": `Eu sou a Pam.`,
+    "sobre.p1": `Artista da Alma, médium e pintora intuitiva baseada em Londres. Nascida no Brasil, vivendo entre dois mundos, sempre fui atraída pelo que existe por baixo da superfície das coisas.`,
+    "sobre.p2": `Passei 11 anos como tatuadora, trabalhando de forma íntima com as pessoas e aprendendo o quanto a alma carrega em silêncio. Esse trabalho me ensinou a escutar com as mãos, a sentir o que alguém ainda não conseguia colocar em palavras, e a confiar no que chegava através do ato criativo.`,
+    "sobre.p3": `A formação em arquitetura me deu um olhar para a forma, a estrutura e o símbolo. O encontro com a psicologia profunda de Jung me deu a linguagem para o que eu sempre havia sentido. E uma prática espiritual de uma vida inteira, enraizada na mediunidade, no tarô e na tradição afro-brasileira, me deu o canal por onde tudo flui.`,
+    "sobre.p4": `Hoje eu pinto almas. Sou de Câncer, Kin 243 Noite Solar Azul do Castelo da Águia. Trabalho com tarô, cristais, velas, sálvia branca e água como ferramentas de ritual para abrir o canal antes de cada arte começar. Meus guias, A Torre, O Diabo e O Julgamento, sustentam o espaço: transformação, sombra e o chamado da alma.`,
+    "sobre.em": `Não pinto o que vejo. Pinto o que chega.`,
+    "badge.medium": `Médium`,
+    "badge.artist": `Artista da Alma`,
+    "badge.cancer": `Canceriana`,
+    "badge.london": `Londres`,
+    "faq.h2": `Perguntas frequentes.`,
+    "faq.q1": `Você precisa de uma foto minha?`,
+    "faq.a1": `<p>Não. Eu trabalho só com seu nome e sua data de nascimento. O que chega não é sobre a sua aparência, é sobre o que a sua alma carrega.</p>`,
+    "faq.q2": `Como funciona a leitura de tarô?`,
+    "faq.a2": `<p>Antes de começar a pintar, eu tiro o tarô para me conectar com seus guias espirituais e entender o campo energético com o qual vou trabalhar. As cartas ajudam a abrir o canal e guiam os símbolos, as cores e as formas que surgem na pintura. Você recebe um relato do que veio.</p>`,
+    "faq.q3": `Preciso entender de espiritualidade ou tarô?`,
+    "faq.a3": `<p>De jeito nenhum. A leitura da alma que acompanha sua pintura explica tudo de um jeito acolhedor e acessível. Você só precisa estar aberta a receber.</p>`,
+    "faq.q4": `Como funciona o envio?`,
+    "faq.a4": `<p>A pintura é enviada fisicamente, com rastreio, para qualquer lugar do mundo. O envio está incluído no preço. Para o Reino Unido e a Europa o prazo é de 1 a 2 semanas. Para o Brasil, o envio pode levar até 4 semanas adicionais após a postagem.</p>`,
+    "faq.q5": `Quanto tempo leva?`,
+    "faq.a5": `<p>De 2 a 4 semanas do início ao envio. Cada arte é feita com cuidado completo e intenção ritual.</p>`,
+    "faq.q6": `Posso pagar parcelado?`,
+    "faq.a6": `<p>Me chama no WhatsApp e me conta, eu retorno com as opções disponíveis para o seu país.</p>`,
+    "faq.q7": `Posso encomendar um Retrato da Alma de presente?`,
+    "faq.a7": `<p>Sim, e é um presente muito profundo. Mas, como eu trabalho com o nome e a data de nascimento de quem vai receber, não pode ser uma surpresa completa. A pessoa vai precisar saber que está a caminho para poder compartilhar esses dados. Isso também é uma questão de ética espiritual: eu não entro no campo energético de ninguém sem o consentimento consciente. Quando a pintura chegar, toda a profundidade dela ainda vai ser uma revelação linda e inesperada. É só me avisar que é um presente quando me chamar no WhatsApp.</p>`,
+    "faq.q8": `A pintura vai se parecer comigo?`,
+    "faq.a8": `<p>Não vai ser um retrato do seu rosto. É um retrato da sua alma, os símbolos, cores, energias e guias que estão presentes no seu campo. Muita gente se reconhece profundamente de formas que vão além da aparência.</p>`,
+    "faq.q9": `E se eu não me conectar com a pintura?`,
+    "faq.a9": `<p>Na minha experiência, a conexão muitas vezes chega em camadas. Algumas pessoas sentem na hora, outras precisam de alguns dias junto da obra antes de ela se abrir. A leitura da alma ajuda a fazer essa ponte. Se algo específico parecer confuso, eu estou sempre aqui para conversar.</p>`,
+    "faq.q10": `Como eu cuido da pintura?`,
+    "faq.a10": `<p>Sua pintura chega com instruções completas de cuidado. Eu recomendo emoldurar atrás de um vidro para proteger a aquarela, mantendo longe da luz direta do sol e da umidade. Uma moldura de 40x50cm fica linda para a pintura de 24x32cm, deixando uma borda elegante ao redor da obra.</p>`,
+    "faq.q11": `Posso escolher as cores ou o estilo?`,
+    "faq.a11": `<p>O processo é totalmente intuitivo e canalizado, então eu não trabalho com pedidos de cores ou estilos específicos. O que chega através da pintura é o que sua alma e seus guias trazem. Confiar nisso faz parte da magia do trabalho.</p>
+      <p style="margin-top:0.8rem;">Dito isso, se você já tem uma conexão com um mentor ou guia espiritual, seja através da meditação, da visualização ou da sua própria prática, e sabe o nome, a energia ou as cores dele, fique à vontade para compartilhar isso comigo. Vira parte da canalização. Se preferir deixar tudo aberto e permitir que chegue o que precisa chegar, é igualmente lindo. Os dois caminhos são honrados.</p>`,
+    "depo.h2": `Vozes da Alma`,
+    "depo.sub": `Palavras de quem já recebeu sua arte.`,
+    "depo.t1": `"A pintura está linda. São cores com as quais eu venho sentindo necessidade de vibrar mais. O laranja na criatividade, o fogo que é ação. O movimento que a imagem traz."`,
+    "depo.t2": `"Ainda me faltam palavras para explicar o que foi receber essa arte. Em muitos momentos era como se eu estivesse olhando para partes de mim que ainda não tinha conseguido acessar por completo. Me senti muito vista, acolhida e até mais corajosa comigo mesma."`,
+    "depo.t3": `"Achei seu trabalho muito claro e fácil de entender, mas eu também sabia que havia mais do que parecia. Me vi em cada linha e cada traço. A arte descreve exatamente o que estou atravessando."`,
+    "depo.t4": `"Quando recebi a arte, foi como se algo mais profundo estivesse sendo refletido de volta para mim. Uma sensação de clareza e de conexão comigo mesma. Como se partes de mim que eu não reconhecia por inteiro de repente ficassem visíveis e válidas."`,
+    "depo.t5": `"Você veio com uma missão linda e cheia de propósito. É incrível como tudo faz sentido. Quero espalhar esse trabalho de luz tão bonito e sagrado."`,
+    "depo.t6": `"Ainda estou processando o que foi criado para mim. Nesses últimos dias eu me pego voltando para a arte, relendo as afirmações e simplesmente ficando com tudo o que senti ao receber."`,
+    "depo.t7": `"Me senti vista e mais alinhada com o meu verdadeiro eu. Consigo ver o caminho à frente com mais clareza graças à mensagem canalizada."`,
+    "ctafinal.h2": `O portal está aberto.`,
+    "ctafinal.sub": `Se algo em você ficou curiosa, isso já basta. Você traz seu nome e sua data de nascimento, eu cuido do resto.`,
+    "ctafinal.sub2": `"Cada arte chega no seu tempo, carregando o que precisa carregar."`,
+    "ctafinal.cta": `Comece sua jornada`,
+    "footer.sub": `Artista da Alma · Londres`,
+    "footer.ptnote": `🌸 Comunidade brasileira, para encomendar sua arte me manda mensagem no <a href="https://www.instagram.com/pamleavey.artz/" target="_blank">Instagram</a> ou no <a href="https://wa.me/message/BRW2PS55L4DXJ1" target="_blank">WhatsApp</a>.`,
+    "footer.privacy": `Política de Privacidade`,
+    "footer.terms": `Termos de Serviço`
+  }
+};
+
+(function(){
+  const els = document.querySelectorAll('[data-i18n]');
+  const EN = {};
+  els.forEach(function(el){ EN[el.getAttribute('data-i18n')] = el.innerHTML; });
+  const WA = 'https://wa.me/message/BRW2PS55L4DXJ1';
+  const ctas = document.querySelectorAll('.cta-js');
+  const ctaHref = new Map();
+  ctas.forEach(function(a){ ctaHref.set(a, a.getAttribute('href')); });
+  const titles = { en: 'Pam Leavey | Soul Artist', pt: 'Pam Leavey | Artista da Alma' };
+  function setLang(lang){
+    els.forEach(function(el){
+      const k = el.getAttribute('data-i18n');
+      let v = (lang === 'pt') ? (TR.pt[k] !== undefined ? TR.pt[k] : EN[k]) : EN[k];
+      if (v !== undefined) el.innerHTML = v;
+    });
+    ctas.forEach(function(a){ a.setAttribute('href', lang === 'pt' ? WA : ctaHref.get(a)); });
+    document.querySelectorAll('.yt-js').forEach(function(a){ a.setAttribute('href', lang === 'pt' ? 'https://www.youtube.com/@artistadaalma' : 'https://youtube.com/@pleaveysoulart'); });
+    document.documentElement.lang = lang;
+    document.title = titles[lang] || titles.en;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('lang', lang); } catch(e){}
+  }
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch(e){}
+  if (saved !== 'pt' && saved !== 'en') {
+    const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    saved = nav.indexOf('pt') === 0 ? 'pt' : 'en';
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+  });
+  setLang(saved);
+})();
+
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;
   const isOpen = btn.classList.contains('active');
@@ -626,6 +972,80 @@ function toggleFaq(btn) {
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
+
+(function(){
+  const isTouch = !!(window.matchMedia && window.matchMedia('(hover: none)').matches);
+  const colors = ['#E8C97A', '#F2C4C4', '#BFE3FF', '#D4C5F9'];
+  const chars = ['✦', '✧', '·'];
+
+  function spawnUp(x, y){
+    const s = document.createElement('span');
+    s.className = 'sparkle';
+    s.textContent = chars[Math.floor(Math.random() * chars.length)];
+    s.style.left = (x + (Math.random() * 14 - 7)) + 'px';
+    s.style.top = (y + (Math.random() * 14 - 7)) + 'px';
+    s.style.color = colors[Math.floor(Math.random() * colors.length)];
+    s.style.fontSize = (8 + Math.random() * 10) + 'px';
+    document.body.appendChild(s);
+    setTimeout(function(){ s.remove(); }, 1000);
+  }
+
+  function burst(x, y, n){
+    for (let i = 0; i < n; i++){
+      const ang = Math.random() * Math.PI * 2;
+      const dist = 22 + Math.random() * 48;
+      const s = document.createElement('span');
+      s.className = 'sparkle-burst';
+      s.textContent = chars[Math.floor(Math.random() * chars.length)];
+      s.style.left = x + 'px';
+      s.style.top = y + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (9 + Math.random() * 11) + 'px';
+      s.style.setProperty('--dx', (Math.cos(ang) * dist) + 'px');
+      s.style.setProperty('--dy', (Math.sin(ang) * dist) + 'px');
+      document.body.appendChild(s);
+      setTimeout(function(){ s.remove(); }, 900);
+    }
+  }
+
+  // Trilha de estrelinhas no mouse
+  let last = 0;
+  if (!isTouch) document.addEventListener('mousemove', function(e){
+    const now = Date.now();
+    if (now - last < 45) return;
+    last = now;
+    spawnUp(e.clientX, e.clientY);
+  });
+
+  if (isTouch) {
+    document.addEventListener('touchmove', function(e){
+      const now = Date.now();
+      if (now - last < 55) return;
+      last = now;
+      const t = e.touches[0];
+      if (t) spawnUp(t.clientX, t.clientY);
+    }, { passive: true });
+    document.addEventListener('touchstart', function(e){
+      const t = e.touches[0];
+      if (t) burst(t.clientX, t.clientY, 12);
+    }, { passive: true });
+  }
+
+  // Explosao ao clicar
+  document.addEventListener('click', function(e){
+    burst(e.clientX, e.clientY, 14);
+  });
+
+  // Brilho nos botoes ao passar o mouse
+  if (!isTouch) document.querySelectorAll('.btn-primary, .btn-whatsapp, .btn-outline, .nav-cta').forEach(function(btn){
+    btn.addEventListener('mouseenter', function(){
+      const r = btn.getBoundingClientRect();
+      for (let i = 0; i < 9; i++){
+        spawnUp(r.left + Math.random() * r.width, r.top + Math.random() * r.height);
+      }
+    });
+  });
+})();
 </script>
 </body>
 </html>
